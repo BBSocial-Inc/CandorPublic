@@ -4,11 +4,13 @@ import { useEffect, useState } from "react";
 import { request, gql, GraphQLClient } from "graphql-request";
 import { useRouter } from "next/router";
 import { SEND_MESSAGE } from "../graphql/mutation";
+import JSConfetti from "js-confetti";
 
 export default function Home({ data }: any) {
   const card = data?.Card;
 
   const [showModal, setShowModal] = useState(false);
+  const [onFocus, setonFocus] = useState(false);
   const [response, setresponse] = useState<string | null>(null);
   const [userMeta, setuserMeta] = useState<any>(null);
   const [loading, setloading] = useState<any>(false);
@@ -51,20 +53,22 @@ export default function Home({ data }: any) {
   };
 
   const handleSend = async () => {
-    console.log(response);
+    const jsConfetti = new JSConfetti();
+
     setloading(true);
     try {
       const data = await graphQLClient.request(SEND_MESSAGE, variables);
 
       if (data) {
+        jsConfetti.addConfetti();
         setloading(false);
         setShowModal(true);
       }
-      console.log(JSON.stringify(data, undefined, 2));
+      // console.log(JSON.stringify(data, undefined, 2));
     } catch (error: any) {
       setloading(false);
       alert(error?.message);
-      console.error(JSON.stringify(error, undefined, 2));
+      // console.error(JSON.stringify(error, undefined, 2));
     }
   };
 
@@ -95,6 +99,12 @@ export default function Home({ data }: any) {
                   setresponse(txt.target.value);
                 }}
                 placeholder="Send me an anonymous message"
+                onFocus={() => setonFocus(true)}
+                onBlur={() => {
+                  if (!response) {
+                    setonFocus(false);
+                  }
+                }}
               />
             </div>
           </div>
@@ -106,30 +116,53 @@ export default function Home({ data }: any) {
           >
             🔒Complete anonymous. Created from Candor App
           </text>
+
+          {onFocus && (
+            <div onClick={handleSend} className={styles.button}>
+              {loading ? "Loading" : "Send"}
+            </div>
+          )}
         </div>
 
-        <div className={styles.bottom}>
-          <text
-            style={{
-              color: card?.background_color ? "rgba(0,0,0,0.5)" : "#856703",
-            }}
-            className={styles.text4}
-          >
-            👇3740 people just tapped the button 👇
-          </text>
-          <div onClick={handleSend} className={styles.button}>
-            {loading ? "Loading" : "Get your own messages!"}
+        {!onFocus && (
+          <div className={styles.bottom}>
+            <text
+              style={{
+                color: card?.background_color ? "rgba(0,0,0,0.5)" : "#856703",
+              }}
+              className={styles.text4}
+            >
+              👇3740 people just tapped the button 👇
+            </text>
+            <div
+              // onClick={handleSend}
+              className={styles.button}
+            >
+              {"Get your own messages!"}
+            </div>
           </div>
-        </div>
+        )}
       </main>
 
       {showModal && (
         <div className={styles.modalcon}>
           <div className={styles.ad}>Ad Section</div>
-          <div className={styles.modal}>
+          <div
+            style={{
+              background: card?.background_color,
+            }}
+            className={styles.modal}
+          >
             <div className={styles.center}>
               <text className={styles.emoji}>🤩</text>
-              <text className={styles.emojitext}>Sent!</text>
+              <text
+                style={{
+                  color: card?.background_color ? "rgba(0,0,0,0.5)" : "#856703",
+                }}
+                className={styles.emojitext}
+              >
+                Sent!
+              </text>
             </div>
             <div
               style={{
