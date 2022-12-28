@@ -31,6 +31,7 @@ $vw-viewport: 1920;
   flex-direction: column;
   overflow: hidden;
   border: none;
+  border-radius: get-vw(20px);
 }
 
 .texts {
@@ -104,6 +105,7 @@ $vw-viewport: 1920;
   background-color: #000;
   height: get-vw(198px);
   padding: get-vw(21px) get-vw(34px);
+  border-radius: get-vw(20px);
 }
 
 .input textarea {
@@ -264,9 +266,10 @@ $vw-viewport: 1920;
 
   .input {
     background-color: #000;
-    height: get-vw(198px);
+    height: get-vw(288px);
     padding: get-vw(21px) get-vw(34px);
     border: none;
+    border-radius: get-vw(20px);
   }
 
   .input textarea {

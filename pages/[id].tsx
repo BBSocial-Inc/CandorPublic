@@ -63,6 +63,7 @@ export default function Home({ data }: any) {
         jsConfetti.addConfetti();
         setloading(false);
         setShowModal(true);
+        setresponse(null);
       }
       // console.log(JSON.stringify(data, undefined, 2));
     } catch (error: any) {
