@@ -16,7 +16,7 @@ export default function Index(props:any){
     console.log(props)
     useEffect(() => {
         router.push({
-            pathname: "/giveaway/one",
+            pathname: "/g/1",
             query: { _referrer: props._referrer }
         })
     }, [])
