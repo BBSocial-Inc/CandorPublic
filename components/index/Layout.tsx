@@ -12,6 +12,7 @@ interface LayoutProps {
 	shared?: string;
 	navbar?: boolean;
 	ogImage?: string;
+	ogUrl?: string;
 }
 
 const Layout = ({
@@ -24,6 +25,7 @@ const Layout = ({
 	college,
 	navbar = true,
 	ogImage = "Logo.png",
+	ogUrl = "https://www.playcandor.com/",
 }: LayoutProps) => {
 	return (
 		<div className="flex flex-col min-h-screen">
@@ -55,7 +57,7 @@ const Layout = ({
 				/>
 				<meta name="author" content="Candor" />
 				<meta property="og:site_name" content="Candor" />
-				<meta property="og:url" content={`https://playcandor.com`} />
+				<meta property="og:url" content={ogUrl} />
 				<meta name="twitter:card" content="summary" />
 				<meta name="twitter:title" content={"Candor"} />
 				<meta name="twitter:description" content={desc} />
