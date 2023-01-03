@@ -298,13 +298,13 @@ const TextInputLarge:FC<any> = ({scr,loading, onSubmit, currentUser})=>{
 					width: scr?.isPortrait ? "100%" : getRelativeWidth(626.82, scr.width),
 					height: getRelativeHeight(93.08, scr?.height),
 				}} className="flex flex-row items-center border-[3px] border-white rounded-full py-1 pr-1">
-					<input disabled={!!currentUser} placeholder="Enter your email" value={!!currentUser ? "playcandor.com/giveaway/one/"+currentUser?.fields?.Key : value} onChange={(e)=>setValue(e.target.value)} className="outline-none w-full bg-transparent px-[31px] font-inter font-medium text-[15px] placeholder-[#CCCACA] lg1:text-[18px] text-white"/>	
+					<input disabled={!!currentUser} placeholder="Enter your email" value={!!currentUser ? "playcandor.com/g/2/"+currentUser?.fields?.Key : value} onChange={(e)=>setValue(e.target.value)} className="outline-none w-full bg-transparent px-[31px] font-inter font-medium text-[15px] placeholder-[#CCCACA] lg1:text-[18px] text-white"/>	
 					<button style={{
 						width: scr?.isPortrait ? "30%" : getRelativeWidth(165.61, scr.width),
 						opacity: copied ? 0.8 : 1,
 					}} onClick={()=>{
 						if(!!currentUser){
-							copy("playcandor.com/giveaway/one/"+currentUser?.fields?.Key)
+							copy("playcandor.com/g/2/"+currentUser?.fields?.Key)
 							setCopied(true)
 						}
 						else{
