@@ -298,13 +298,13 @@ const TextInputLarge:FC<any> = ({scr,loading, onSubmit, currentUser})=>{
 					width: scr?.isPortrait ? "100%" : getRelativeWidth(626.82, scr.width),
 					height: getRelativeHeight(93.08, scr?.height),
 				}} className="flex flex-row items-center border-[3px] border-white rounded-full py-1 pr-1">
-					<input disabled={!!currentUser} placeholder="Enter your email" value={!!currentUser ? "playcandor.com/g/2/"+currentUser?.fields?.Key : value} onChange={(e)=>setValue(e.target.value)} className="outline-none w-full bg-transparent px-[31px] font-inter font-medium text-[15px] placeholder-[#CCCACA] lg1:text-[18px] text-white"/>	
+					<input disabled={!!currentUser} placeholder="Enter your email" value={!!currentUser ? "playcandor.com/uniqueId/"+currentUser?.fields?.Key : value} onChange={(e)=>setValue(e.target.value)} className="outline-none w-full bg-transparent px-[31px] font-inter font-medium text-[15px] placeholder-[#CCCACA] lg1:text-[18px] text-white"/>	
 					<button style={{
 						width: scr?.isPortrait ? "30%" : getRelativeWidth(165.61, scr.width),
 						opacity: copied ? 0.8 : 1,
 					}} onClick={()=>{
 						if(!!currentUser){
-							copy("playcandor.com/g/2/"+currentUser?.fields?.Key)
+							copy("playcandor.com/uniqueId/"+currentUser?.fields?.Key)
 							setCopied(true)
 						}
 						else{
@@ -455,7 +455,7 @@ const GiveAwayOne: FC = ({_referrer}:any) => {
 	}
 
 	return (
-		<Layout footer={false} navbar={false}>
+		<Layout ogImage="blueog.png" footer={false} navbar={false}>
 			<div className="portrait:flex portrait:flex-col-reverse landscape:grid landscape:grid-cols-12 min-h-screen w-full">
 				<div className="landscape:col-span-6 w-full h-full flex items-center justify-center">
 					<TitleComponent scr={scr}/>
@@ -486,7 +486,7 @@ const GiveAwayOne: FC = ({_referrer}:any) => {
 								<text id="C" transform="translate(53.78 94.655)" fill="#064c82" font-size="22" font-family="FredokaOne-Regular, Fredoka One"><tspan x="0" y="0">C</tspan></text>
 								<text id="WIN_" data-name="WIN " transform="translate(221.005 146.789)" fill="#fff" font-size="32" font-family="FredokaOne-Regular, Fredoka One"><tspan x="0" y="0">WIN </tspan></text>
 								<text id="iPhone_iPad_or_AirPod_Csash_Prizes" data-name="iPhone, iPad or AirPod &amp; Cash
-							Prizes" transform="translate(15.821 170.723)" fill="#fff" font-size="18" font-family="FredokaOne-Regular, Fredoka One"><tspan x="0" y="0">iPhone, iPad or AirPod &amp; Csash</tspan><tspan x="0" y="19">Prizes</tspan></text>
+							Prizes" transform="translate(15.821 170.723)" fill="#fff" font-size="18" font-family="FredokaOne-Regular, Fredoka One"><tspan x="0" y="0">iPhone, iPad or AirPod &amp; Cash</tspan><tspan x="0" y="19">Prizes</tspan></text>
 								<text id="Enter_for_a_chance_to" data-name="Enter for a chance to" transform="translate(15 147.921)" fill="#fff" font-size="19" font-family="FredokaOne-Regular, Fredoka One"><tspan x="0" y="0">Enter for a chance to</tspan></text>
 								<text id="_1.Sign_up_with_your_email" data-name="1.Sign up with 
 							your email" transform="translate(15 235.043)" fill="#fff" font-size="10" font-family="FredokaOne-Regular, Fredoka One"><tspan x="0" y="0">1.Sign up with </tspan><tspan x="0" y="12">your email</tspan></text>
