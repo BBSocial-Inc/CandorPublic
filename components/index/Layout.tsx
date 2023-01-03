@@ -18,12 +18,8 @@ interface LayoutProps {
 const Layout = ({
 	// @ts-ignore
 	children,
-	title,
 	desc = `Connect, engage, and chat anonymously 
 	with friends - all in one app!`,
-	footer = true,
-	college,
-	navbar = true,
 	ogImage = "Logo.png",
 	ogUrl = "https://www.playcandor.com/",
 }: LayoutProps) => {
