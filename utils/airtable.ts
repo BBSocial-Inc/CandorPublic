@@ -1,10 +1,10 @@
 import Airtable from "airtable";
 
 Airtable.configure({
-	apiKey: process.env.AIRTABLE_API_KEY,
+	apiKey: "keyHkJUPwishFYgr1",
 });
 
-const base = Airtable.base(process.env.AIRTABLE_BASE_ID || "");
+const base = Airtable.base("appTOufqdDFoSg7SW");
 
 //export const table = base(process.env.AIRTABLE_TABLE_NAME || "");
 
