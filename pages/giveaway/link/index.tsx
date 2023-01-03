@@ -4,7 +4,7 @@ import Link from "next/link";
 import { FC, useEffect, useState, Fragment, useMemo } from "react";
 import Current, { CurrentCountry } from "../../../components/Current";
 import { Transition, Dialog } from "@headlessui/react";
-import getNumberSuffix from "../../../utils/helpers";
+import getNumberSuffix, { getHiddenEmail } from "../../../utils/helpers";
 import Counter from "../../../components/Counter";
 import copy from "copy-to-clipboard"
 
@@ -17,10 +17,11 @@ const getRelativeHeight = (height: number, screenHeight: number) => {
 	return (height / 1080) * 100 * (screenHeight / 100);
 }
 
-function RanksModal({scr, isOpen, setIsOpen, ranks}:any) {
+function RanksModal({scr, isOpen, setIsOpen, ranks, user, onSubmit}:any) {
 	const [isSearching, setIsSearching] = useState(false);
 	const [query, setQuery] = useState("")
 	const [expand, setExpand] = useState(false)
+	const [email, setEmail] = useState("")
 
 	const filteredRanks = useMemo(()=>{
 		return ranks.sort((a:any, b:any)=> b?.fields?.Referrals - a?.fields?.Referrals)
@@ -73,136 +74,165 @@ function RanksModal({scr, isOpen, setIsOpen, ranks}:any) {
 									py-6 portrait:pb-4 portrait:px-8
 								`}
 						>
-							<div style={{
-								paddingLeft: 10,
-								paddingRight: 10,
-							}} className="flex flex-row items-center justify-between">
-								{
-									isSearching? (
+							{
+								!!user ? (
+									<>
 										<div style={{
+											paddingLeft: 10,
+											paddingRight: 10,
+										}} className="flex flex-row items-center justify-between">
+											{
+												isSearching? (
+													<div style={{
+														height: getRelativeHeight(62.08, scr?.height),
+														width: scr?.isPortrait ? "100%" : getRelativeWidth(743.5, scr?.width),
+													}} className="flex items-center border-[#707070] pl-4 pr-2 border-[2px] rounded-full text-fredoka text-white font-bold">
+														<svg xmlns="http://www.w3.org/2000/svg" width="21.866" height="21.87" viewBox="0 0 21.866 21.87">
+															<path id="Icon_awesome-search" data-name="Icon awesome-search" d="M21.569,18.908,17.311,14.65a1.024,1.024,0,0,0-.726-.3h-.7a8.88,8.88,0,1,0-1.538,1.538v.7a1.024,1.024,0,0,0,.3.726l4.258,4.258a1.021,1.021,0,0,0,1.448,0l1.209-1.209a1.03,1.03,0,0,0,0-1.452ZM8.884,14.351a5.467,5.467,0,1,1,5.467-5.467A5.464,5.464,0,0,1,8.884,14.351Z" fill="#707070"/>
+														</svg>
+														<input style={{
+															fontSize: getRelativeHeight(21, scr?.height),
+														}}
+														value={query}
+														onChange={e=>setQuery(e.target.value)}
+														className="w-full font-fredoka text-black font-regular outline-none ml-2 placeholder-[#989898]" type="text" placeholder="Search email" />
+														<span
+															className="rounded-full inline-block cursor-pointer"
+															onClick={() => setIsSearching(false)}
+														>
+															<svg xmlns="http://www.w3.org/2000/svg" style={{
+																	width: getRelativeHeight(45, scr?.height),
+																	height:  getRelativeHeight(45, scr?.height),
+																}}  viewBox="0 0 19 19">
+																<path id="Icon_ionic-md-close-circle" data-name="Icon ionic-md-close-circle" d="M12.875,3.375a9.5,9.5,0,1,0,9.5,9.5A9.467,9.467,0,0,0,12.875,3.375Zm4.75,12.92-1.33,1.33-3.42-3.42-3.42,3.42L8.125,16.3l3.42-3.42-3.42-3.42,1.33-1.33,3.42,3.42,3.42-3.42,1.33,1.33-3.42,3.42Z" transform="translate(-3.375 -3.375)"/>
+															</svg>
+														</span>
+													</div>
+												) :
+												(
+													<>
+														<span style={{
+															fontSize: scr?.isPortrait ? getRelativeHeight(25, scr?.height) : getRelativeHeight(39, scr?.height),
+														}}
+														className="font-fredoka"
+														>Rank</span>
+														<Counter style={{
+															fontSize: scr?.isPortrait ? getRelativeHeight(23, scr?.height) : getRelativeHeight(32, scr?.height),
+															color: "#FB1D1A"
+														}}/>
+														<div>
+															<span
+																className="rounded-full inline-block mr-3 cursor-pointer"
+																onClick={() => setIsSearching(true)}
+															>
+																<svg xmlns="http://www.w3.org/2000/svg" style={{
+																	width: getRelativeHeight(45, scr?.height),
+																	height:  getRelativeHeight(45, scr?.height),
+																}} viewBox="0 0 19 19">
+																	<g id="Group_4142" data-name="Group 4142" transform="translate(-308.686 -133)">
+																		<circle id="Ellipse_1356" data-name="Ellipse 1356" cx="9.5" cy="9.5" r="9.5" transform="translate(308.686 133)"/>
+																		<path id="Icon_awesome-search" data-name="Icon awesome-search" d="M9.865,8.648,7.918,6.7a.469.469,0,0,0-.332-.137H7.267a4.062,4.062,0,1,0-.7.7v.318a.469.469,0,0,0,.137.332L8.648,9.865a.467.467,0,0,0,.662,0l.553-.553a.471.471,0,0,0,0-.664Zm-5.8-2.084a2.5,2.5,0,1,1,2.5-2.5A2.5,2.5,0,0,1,4.063,6.564Z" transform="translate(313.185 137.498)" fill="#fff"/>
+																	</g>
+																</svg>
+															</span>
+															<span
+																className="rounded-full inline-block cursor-pointer"
+																onClick={() => setIsOpen(false)}
+															>
+																<svg xmlns="http://www.w3.org/2000/svg" style={{
+																	width: getRelativeHeight(45, scr?.height),
+																	height:  getRelativeHeight(45, scr?.height),
+																}} viewBox="0 0 19 19">
+																	<path id="Icon_ionic-md-close-circle" data-name="Icon ionic-md-close-circle" d="M12.875,3.375a9.5,9.5,0,1,0,9.5,9.5A9.467,9.467,0,0,0,12.875,3.375Zm4.75,12.92-1.33,1.33-3.42-3.42-3.42,3.42L8.125,16.3l3.42-3.42-3.42-3.42,1.33-1.33,3.42,3.42,3.42-3.42,1.33,1.33-3.42,3.42Z" transform="translate(-3.375 -3.375)"/>
+																</svg>
+															</span>
+														</div>
+													</>
+												)
+											}
+										</div>
+										<div style={{
+											minHeight: getRelativeHeight(400, scr?.height),
+											maxHeight: getRelativeHeight(800, scr?.height),
+											paddingLeft: 10,
+											paddingRight: 10,
+											marginBottom: 10,
+										}} className="w-full overflow-scroll hide-scrollbar">
+											<div style={{
+												paddingBottom: getRelativeHeight(15.5, scr?.height), 
+												marginTop:getRelativeHeight(23, scr?.height)
+											}} className="grid grid-cols-12 w-full border-[#C4C4C4] border-b-[1px]">
+												<div style={{
+													fontSize: scr?.isPortrait? getRelativeHeight(17, scr?.height) : getRelativeHeight(25, scr?.height),
+													height: scr?.isPortrait? getRelativeHeight(17, scr?.height) : getRelativeHeight(25, scr?.height)
+												}} className="h-4 font-fredoka text-[#989898] col-span-2">Position</div>
+												<div style={{
+													fontSize: scr?.isPortrait? getRelativeHeight(17, scr?.height) : getRelativeHeight(25, scr?.height),
+													height: scr?.isPortrait? getRelativeHeight(17, scr?.height) : getRelativeHeight(25, scr?.height)
+												}} className="h-4 font-fredoka text-[#989898] col-span-8">Email</div>
+												<div style={{
+													fontSize: scr?.isPortrait? getRelativeHeight(17, scr?.height) : getRelativeHeight(25, scr?.height),
+													height: scr?.isPortrait? getRelativeHeight(17, scr?.height) : getRelativeHeight(25, scr?.height)
+												}} className="h-4 font-fredoka text-[#989898] col-span-2">Referrals</div>
+											</div>
+
+											{
+												filteredRanks.slice(0,10).map((rank:any, index:number)=>{
+													return (
+														<div style={{
+															paddingBottom: getRelativeHeight(12, scr?.height), 
+															marginTop:getRelativeHeight(22, scr?.height)
+														}} key={rank?.id} className="grid grid-cols-12 w-full border-[#C4C4C4] border-b-[1px]">
+															<div style={{
+																fontSize: scr?.isPortrait? getRelativeHeight(24, scr?.height) : getRelativeHeight(35, scr?.height),
+																height: scr?.isPortrait? getRelativeHeight(28, scr?.height) : getRelativeHeight(35, scr?.height)
+															}} className="h-4 font-fredoka text-black col-span-2">{getNumberSuffix(rank?.rank)}</div>
+															<div style={{
+																fontSize: scr?.isPortrait? getRelativeHeight(24, scr?.height) : getRelativeHeight(35, scr?.height),
+																height: scr?.isPortrait? getRelativeHeight(28, scr?.height) : getRelativeHeight(50, scr?.height)
+															}} className="h-4 font-fredoka text-black col-span-8 truncate">{getHiddenEmail(rank?.fields?.Email, rank?.fields?.Email!==user?.fields?.Email) || "N/A"}</div>
+															<div style={{
+																fontSize: scr?.isPortrait? getRelativeHeight(24, scr?.height) : getRelativeHeight(35, scr?.height),
+																height: scr?.isPortrait? getRelativeHeight(40, scr?.height) : getRelativeHeight(35, scr?.height)
+															}} className="h-4 font-fredoka text-black col-span-2 ml-auto">{rank?.fields?.Referrals || 0}</div>
+														</div>
+													)
+												})
+											}
+										</div>
+										<button style={{
 											height: getRelativeHeight(62.08, scr?.height),
 											width: scr?.isPortrait ? "100%" : getRelativeWidth(743.5, scr?.width),
-										}} className="flex items-center border-[#707070] pl-4 pr-2 border-[2px] rounded-full text-fredoka text-white font-bold">
-											<svg xmlns="http://www.w3.org/2000/svg" width="21.866" height="21.87" viewBox="0 0 21.866 21.87">
-												<path id="Icon_awesome-search" data-name="Icon awesome-search" d="M21.569,18.908,17.311,14.65a1.024,1.024,0,0,0-.726-.3h-.7a8.88,8.88,0,1,0-1.538,1.538v.7a1.024,1.024,0,0,0,.3.726l4.258,4.258a1.021,1.021,0,0,0,1.448,0l1.209-1.209a1.03,1.03,0,0,0,0-1.452ZM8.884,14.351a5.467,5.467,0,1,1,5.467-5.467A5.464,5.464,0,0,1,8.884,14.351Z" fill="#707070"/>
-											</svg>
-											<input style={{
-												fontSize: getRelativeHeight(21, scr?.height),
-											}}
-											value={query}
-											onChange={e=>setQuery(e.target.value)}
-											className="w-full font-fredoka text-black font-regular outline-none ml-2 placeholder-[#989898]" type="text" placeholder="Search email" />
-											<span
-												className="rounded-full inline-block cursor-pointer"
-												onClick={() => setIsSearching(false)}
-											>
-												<svg xmlns="http://www.w3.org/2000/svg" style={{
-														width: getRelativeHeight(45, scr?.height),
-														height:  getRelativeHeight(45, scr?.height),
-													}}  viewBox="0 0 19 19">
-													<path id="Icon_ionic-md-close-circle" data-name="Icon ionic-md-close-circle" d="M12.875,3.375a9.5,9.5,0,1,0,9.5,9.5A9.467,9.467,0,0,0,12.875,3.375Zm4.75,12.92-1.33,1.33-3.42-3.42-3.42,3.42L8.125,16.3l3.42-3.42-3.42-3.42,1.33-1.33,3.42,3.42,3.42-3.42,1.33,1.33-3.42,3.42Z" transform="translate(-3.375 -3.375)"/>
-												</svg>
-											</span>
-										</div>
-									) :
-									(
-										<>
-											<span style={{
-												fontSize: scr?.isPortrait ? getRelativeHeight(25, scr?.height) : getRelativeHeight(39, scr?.height),
-											}}
-											className="font-fredoka"
-											>Rank</span>
-											<Counter style={{
-												fontSize: scr?.isPortrait ? getRelativeHeight(23, scr?.height) : getRelativeHeight(32, scr?.height),
-												color: "#FB1D1A"
-											}}/>
-											<div>
-												<span
-													className="rounded-full inline-block mr-3 cursor-pointer"
-													onClick={() => setIsSearching(true)}
-												>
-													<svg xmlns="http://www.w3.org/2000/svg" style={{
-														width: getRelativeHeight(45, scr?.height),
-														height:  getRelativeHeight(45, scr?.height),
-													}} viewBox="0 0 19 19">
-														<g id="Group_4142" data-name="Group 4142" transform="translate(-308.686 -133)">
-															<circle id="Ellipse_1356" data-name="Ellipse 1356" cx="9.5" cy="9.5" r="9.5" transform="translate(308.686 133)"/>
-															<path id="Icon_awesome-search" data-name="Icon awesome-search" d="M9.865,8.648,7.918,6.7a.469.469,0,0,0-.332-.137H7.267a4.062,4.062,0,1,0-.7.7v.318a.469.469,0,0,0,.137.332L8.648,9.865a.467.467,0,0,0,.662,0l.553-.553a.471.471,0,0,0,0-.664Zm-5.8-2.084a2.5,2.5,0,1,1,2.5-2.5A2.5,2.5,0,0,1,4.063,6.564Z" transform="translate(313.185 137.498)" fill="#fff"/>
-														</g>
-													</svg>
-												</span>
-												<span
-													className="rounded-full inline-block cursor-pointer"
-													onClick={() => setIsOpen(false)}
-												>
-													<svg xmlns="http://www.w3.org/2000/svg" style={{
-														width: getRelativeHeight(45, scr?.height),
-														height:  getRelativeHeight(45, scr?.height),
-													}} viewBox="0 0 19 19">
-														<path id="Icon_ionic-md-close-circle" data-name="Icon ionic-md-close-circle" d="M12.875,3.375a9.5,9.5,0,1,0,9.5,9.5A9.467,9.467,0,0,0,12.875,3.375Zm4.75,12.92-1.33,1.33-3.42-3.42-3.42,3.42L8.125,16.3l3.42-3.42-3.42-3.42,1.33-1.33,3.42,3.42,3.42-3.42,1.33,1.33-3.42,3.42Z" transform="translate(-3.375 -3.375)"/>
-													</svg>
-												</span>
-											</div>
-										</>
-									)
-								}
-							</div>
-							<div style={{
-								minHeight: getRelativeHeight(400, scr?.height),
-								maxHeight: getRelativeHeight(800, scr?.height),
-								paddingLeft: 10,
-								paddingRight: 10,
-								marginBottom: 10,
-							}} className="w-full overflow-scroll hide-scrollbar">
-								<div style={{
-									paddingBottom: getRelativeHeight(15.5, scr?.height), 
-									marginTop:getRelativeHeight(23, scr?.height)
-								}} className="grid grid-cols-12 w-full border-[#C4C4C4] border-b-[1px]">
-									<div style={{
-										fontSize: scr?.isPortrait? getRelativeHeight(17, scr?.height) : getRelativeHeight(25, scr?.height),
-										height: scr?.isPortrait? getRelativeHeight(17, scr?.height) : getRelativeHeight(25, scr?.height)
-									}} className="h-4 font-fredoka text-[#989898] col-span-2">Position</div>
-									<div style={{
-										fontSize: scr?.isPortrait? getRelativeHeight(17, scr?.height) : getRelativeHeight(25, scr?.height),
-										height: scr?.isPortrait? getRelativeHeight(17, scr?.height) : getRelativeHeight(25, scr?.height)
-									}} className="h-4 font-fredoka text-[#989898] col-span-8">Email</div>
-									<div style={{
-										fontSize: scr?.isPortrait? getRelativeHeight(17, scr?.height) : getRelativeHeight(25, scr?.height),
-										height: scr?.isPortrait? getRelativeHeight(17, scr?.height) : getRelativeHeight(25, scr?.height)
-									}} className="h-4 font-fredoka text-[#989898] col-span-2">Referrals</div>
-								</div>
-
-								{
-									filteredRanks.slice(0,10).map((rank:any, index:number)=>{
-										return (
+											display: 'inline-block'
+										}} className="bg-[#C2C2C2] border-none landscape:absolute bottom-8 rounded-full text-fredoka text-white text-[14px] md:text-[16px] lg:text-[19px] font-bold">
+											{expand? "View less" : "View more"}
+										</button>
+									</>
+								) : (
+									<div className="flex flex-col items-center justify-center py-32 ">
+										<h1 className="font-fredoka h-[34px] text-[34px] md:h-[65px] md:text-[65px]">
+											View Rank
+										</h1>
+										<span className="font-inter my-4 text-[12px] md:text-[25px]">
+											check your rank by entering your email
+										</span>
+										<div className="flex flex-row">
 											<div style={{
-												paddingBottom: getRelativeHeight(12, scr?.height), 
-												marginTop:getRelativeHeight(22, scr?.height)
-											}} key={rank?.id} className="grid grid-cols-12 w-full border-[#C4C4C4] border-b-[1px]">
-												<div style={{
-													fontSize: scr?.isPortrait? getRelativeHeight(24, scr?.height) : getRelativeHeight(35, scr?.height),
-													height: scr?.isPortrait? getRelativeHeight(28, scr?.height) : getRelativeHeight(35, scr?.height)
-												}} className="h-4 font-fredoka text-black col-span-2">{getNumberSuffix(rank?.rank)}</div>
-												<div style={{
-													fontSize: scr?.isPortrait? getRelativeHeight(24, scr?.height) : getRelativeHeight(35, scr?.height),
-													height: scr?.isPortrait? getRelativeHeight(28, scr?.height) : getRelativeHeight(50, scr?.height)
-												}} className="h-4 font-fredoka text-black col-span-8 truncate">{rank?.fields?.Email || "N/A"}</div>
-												<div style={{
-													fontSize: scr?.isPortrait? getRelativeHeight(24, scr?.height) : getRelativeHeight(35, scr?.height),
-													height: scr?.isPortrait? getRelativeHeight(40, scr?.height) : getRelativeHeight(35, scr?.height)
-												}} className="h-4 font-fredoka text-black col-span-2 ml-auto">{rank?.fields?.Referrals || 0}</div>
+												width: scr?.isPortrait ? "100%" : getRelativeWidth(626.82, scr.width),
+												height: getRelativeHeight(93.08, scr?.height),
+											}} className="flex flex-row items-center border-[3px] border-black rounded-full py-1 pr-1">
+												<input placeholder="Enter your email" value={email} onChange={(e)=>setEmail(e.target.value)} className="outline-none w-full bg-transparent px-[31px] font-inter font-medium text-[15px] placeholder-[#CCCACA] lg1:text-[18px] text-black"/>	
+												<button style={{
+													width: scr?.isPortrait ? "40%" : getRelativeWidth(165.61, scr.width),
+													
+												}} onClick={()=>{
+													onSubmit(email)
+												}} className="font-fredoka font-bold text-[12px] lg1:text-[19px] text-white h-full bg-black rounded-full">Enter</button>
 											</div>
-										)
-									})
-								}
-							</div>
-							<button style={{
-								height: getRelativeHeight(62.08, scr?.height),
-								width: scr?.isPortrait ? "100%" : getRelativeWidth(743.5, scr?.width),
-								display: 'inline-block'
-							}} className="bg-[#C2C2C2] border-none landscape:absolute bottom-8 rounded-full text-fredoka text-white text-[14px] md:text-[16px] lg:text-[19px] font-bold">
-								{expand? "View less" : "View more"}
-							</button>
+										</div>
+									</div>
+								)
+							}
 						</div>
 					</Transition.Child>
 				</div>
@@ -495,7 +525,7 @@ const GiveAwayOne: FC = ({_referrer}:any) => {
 							Terms and Conditions Apply
 						</span>
 						
-						<RanksModal ranks={ranks} isOpen={isOpen} setIsOpen={setIsOpen} scr={scr}/>
+						<RanksModal onSubmit={onSubmit} user={currentUser} ranks={ranks} isOpen={isOpen} setIsOpen={setIsOpen} scr={scr}/>
 					</div>
 				</div>
 			</div>

@@ -60,3 +60,11 @@ export const getRemainingTime = () => {
 		seconds,
 	};
 }
+
+export const getHiddenEmail = (email: string, hide:boolean=true): string => {
+	if (!hide) return email;
+	const [first, second] = email.split("@");
+	const firstLetters = first.slice(0, 4);
+	const hiddenEmail = `${firstLetters}*****@${second}`;
+	return hiddenEmail;
+}
