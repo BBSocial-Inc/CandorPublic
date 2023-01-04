@@ -81,10 +81,7 @@ export default function Home({ data }: any) {
   return (
     <>
       <Headd/>
-
-      le monde
-
-      {/* <main
+      <main
         style={{
           background: card?.background_color,
         }}
@@ -200,7 +197,7 @@ export default function Home({ data }: any) {
             </div>
           </div>
         </div>
-      )} */}
+      )}
     </>
   );
 }
