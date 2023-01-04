@@ -82,7 +82,9 @@ export default function Home({ data }: any) {
     <>
       <Headd/>
 
-      <main
+      le monde
+
+      {/* <main
         style={{
           background: card?.background_color,
         }}
@@ -198,7 +200,7 @@ export default function Home({ data }: any) {
             </div>
           </div>
         </div>
-      )}
+      )} */}
     </>
   );
 }
