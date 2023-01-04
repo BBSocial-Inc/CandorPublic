@@ -449,9 +449,12 @@ const GiveAwayOne: FC = ({_referrer}:any) => {
 
 	if(loadingCountry){
 		return (
-			<div className="h-screen w-full flex items-center justify-center">
-				<span className="font-anton text-[12px] lg1:text-[19px] text-black">LOADING...</span>
-			</div>
+			<>
+				<Headd image="https://playcandor.com/redog.png"/>
+				<div className="h-screen w-full flex items-center justify-center">
+					<span className="font-anton text-[12px] lg1:text-[19px] text-black">LOADING...</span>
+				</div>
+			</>
 		)
 	}
 
