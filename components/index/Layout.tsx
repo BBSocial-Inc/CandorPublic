@@ -1,7 +1,6 @@
 /* eslint-disable @next/next/inline-script-id */
 import Head from "next/head";
 import Script from "next/script";
-import { Helmet } from "react-helmet";
 
 interface LayoutProps {
 	children: any;
@@ -22,11 +21,11 @@ const Layout = ({
 	desc = `Connect, engage, and chat anonymously 
 	with friends - all in one app!`,
 	ogImage = "Logo.png",
-	ogUrl = "https://www.playcandor.com/",
+	ogUrl = "https://www.playcandor.com",
 }: LayoutProps) => {
 	return (
 		<div className="flex flex-col min-h-screen">
-			<Helmet>
+			<Head>
 				<title>Candor - Only Truths, No Lies!</title>
 				<meta name="description" content={desc} />
 				<meta property="og:type" content="website" />
@@ -42,7 +41,7 @@ const Layout = ({
 				/>
 				<meta
 					property="og:image"
-					content={"https://www.playcandor.com/"+ogImage}
+					content={`https://www.playcandor.com/${ogImage}`}
 				/>
 				<meta
 					property="snapchat:sticker"
@@ -54,13 +53,13 @@ const Layout = ({
 				/>
 				<meta name="author" content="Candor" />
 				<meta property="og:site_name" content="Candor" />
-				<meta property="og:url" content={ogUrl} />
+				<meta property="og:url" content={`${ogUrl || "Candor."}`} />
 				<meta name="twitter:card" content="summary" />
 				<meta name="twitter:title" content={"Candor"} />
 				<meta name="twitter:description" content={desc} />
 				<meta name="twitter:site" content="@propernounco" />
 				<meta name="twitter:creator" content="@propernounco" />
-			</Helmet>
+			</Head>
 
 			<Script>
 				{`(function (d, s, id) {
