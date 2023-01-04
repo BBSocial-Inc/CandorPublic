@@ -1,11 +1,11 @@
 import Head from "next/head";
-import styles from "../styles/Response.module.scss";
+import styles from "../../styles/Response.module.scss";
 import { useEffect, useState } from "react";
 import { request, gql, GraphQLClient } from "graphql-request";
 import { useRouter } from "next/router";
-import { SEND_MESSAGE } from "../graphql/mutation";
+import { SEND_MESSAGE } from "../../graphql/mutation";
 import JSConfetti from "js-confetti";
-import Headd from "../components/Head";
+import Headd from "../../components/Head";
 
 export default function Home({ data }: any) {
   const card = data?.Card;
