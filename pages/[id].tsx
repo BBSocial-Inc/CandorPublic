@@ -208,7 +208,7 @@ export default function Home({ data }: any) {
 }
 
 export async function getServerSideProps(context: any) {
-  const pid = context.query.cid;
+  const pid = context?.query?.cid;
   const query = gql`
     query Card($cardId: String!) {
       Card(id: $cardId) {
@@ -224,7 +224,7 @@ export async function getServerSideProps(context: any) {
   `;
 
   const variables = {
-    cardId: pid.toString(),
+    cardId: pid?.toString(),
   };
 
   const res = await request(
