@@ -233,8 +233,7 @@ export async function getServerSideProps(context: any) {
   return { 
     props: { 
       data: data ? data : {} ,
-      id: context?.query?.id,
-      cid: context?.query?.cid
+      ...context?.query
     }
   };
 }
