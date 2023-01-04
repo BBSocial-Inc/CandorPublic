@@ -5,6 +5,7 @@ import { request, gql, GraphQLClient } from "graphql-request";
 import { useRouter } from "next/router";
 import { SEND_MESSAGE } from "../graphql/mutation";
 import JSConfetti from "js-confetti";
+import Headd from "../components/Head";
 
 export default function Home({ data }: any) {
   const card = data?.Card;
@@ -79,12 +80,7 @@ export default function Home({ data }: any) {
 
   return (
     <>
-      <Head>
-        <title>Candor - Only Truths, No Lies!</title>
-        <meta name="description" content={`Send anonymous message to ${id}`} />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/Logo.png" />
-      </Head>
+      <Headd/>
 
       <main
         style={{

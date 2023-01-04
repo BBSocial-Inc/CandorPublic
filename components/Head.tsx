@@ -4,38 +4,39 @@ export default function Headd({ title, image }:any) {
   const dash = title == "" ? "" : " |";
   return (
     <Head>
-      <title>{title + dash + " Discover and Manage Events"} </title>
+      <title>{"Candor - Only Truths, No Lies!"} </title>
       <meta
         name="title"
-        content={title + dash + " Discover and Manage Events"}
+        content={"Candor - Only Truths, No Lies!"}
       ></meta>
       <meta
         name="og:title"
-        content={title + dash + " Discover and Manage Events"}
+        content={"Candor - Only Truths, No Lies!"}
       ></meta>
 
       <meta property="og:type" content="website"></meta>
-      <meta property="og:url" content="https://tease.africa/"></meta>
+      <meta property="og:url" content="https://playcandor.com/"></meta>
       <meta
         name="description"
-        content="With Tease you can discover events in your city, buy tickets to music or games, create and manage your own event and sell tickets to other users."
+        content="Connect, engage, and chat anonymously with friends - all in one app!"
       />
       <meta
         name="og:description"
-        content="With Tease you can discover events in your city, buy tickets to music or games, create and manage your own event and sell tickets to other users."
+        content="Connect, engage, and chat anonymously with friends - all in one app!"
       />
       <link rel="icon" href="/icon.png" />
       <meta
+        name="og:image"
         property="og:image"
-        content={image ? image : "https://teaseafrica.netlify.app/1.png"}
+        content={image ? image : "https://playcandor.com/Logo.png"}
       ></meta>
 
       <meta
         name="twitter:title"
-        content={title + dash + " Discover and Manage Events"}
+        content={"Candor - Only Truths, No Lies!"}
       ></meta>
       <meta
-        content="With Tease you can discover events in your city, buy tickets to music or games, create and manage your own event and sell tickets to other users."
+        content="Connect, engage, and chat anonymously with friends - all in one app!"
         name="twitter:description"
       ></meta>
       <meta name="twitter:url" content="https://tease.africa/"></meta>
@@ -44,7 +45,7 @@ export default function Headd({ title, image }:any) {
       <meta name="twitter:creator" content="@TeaseAfrica"></meta>
       <meta
         name="twitter:image"
-        content={image ? image : "https://teaseafrica.netlify.app/1.png"}
+        content={image ? image : "https://playcandor.com/Logo.png"}
       ></meta>
 
       <script

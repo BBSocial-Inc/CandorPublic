@@ -10,7 +10,7 @@ const inter = Inter({ subsets: ["latin"] });
 export default function Home() {
   return (
     <>
-      <Headd image="https://playcandor.com/redog.png" title="Candor -"/>
+      <Headd/>
     </>
   );
 }

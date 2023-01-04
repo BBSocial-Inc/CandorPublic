@@ -22,6 +22,6 @@ export default function Index(props:any){
         })
     }, [])
     return <>
-        <Headd image="https://playcandor.com/redog.png" title="Candor -"/>
+        <Headd image="https://playcandor.com/redog.png"/>
     </>
 }

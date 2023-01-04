@@ -457,8 +457,8 @@ const GiveAwayOne: FC = ({_referrer}:any) => {
 	}
 
 	return (
-		<Layout ogUrl={`https://playcandor.com/giveaway/ipad`} ogImage="blueog.png" footer={false} navbar={false}>
-			<Headd image="https://playcandor.com/redog.png" title="Candor -"/>
+		<>
+			<Headd image="https://playcandor.com/redog.png"/>
 			<div className="portrait:flex portrait:flex-col-reverse landscape:grid landscape:grid-cols-12 min-h-screen w-full">
 				<div className="landscape:col-span-6 w-full h-full flex items-center justify-center">
 					<TitleComponent scr={scr}/>
@@ -559,7 +559,7 @@ const GiveAwayOne: FC = ({_referrer}:any) => {
 					</div>
 				</div>
 			</div>
-		</Layout>
+		</>
 	);
 }
 
