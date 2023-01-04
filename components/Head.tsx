@@ -28,7 +28,7 @@ export default function Headd({ title, image }:any) {
       <meta
         name="og:image"
         property="og:image"
-        content={image ? image : "https://playcandor.com/Logo.png"}
+        content={image ? image : "/Logo.png"}
       ></meta>
 
       <meta

@@ -230,5 +230,11 @@ export async function getServerSideProps(context: any) {
   );
   const data = res;
 
-  return { props: { data: data ? data : {} } };
+  return { 
+    props: { 
+      data: data ? data : {} ,
+      id: context?.query?.id,
+      cid: context?.query?.cid
+    }
+  };
 }
