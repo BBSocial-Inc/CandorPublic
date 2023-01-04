@@ -8,6 +8,7 @@ import getNumberSuffix, { getHiddenEmail } from "../../../utils/helpers";
 import Counter from "../../../components/Counter";
 import copy from "copy-to-clipboard"
 import Head from "next/head";
+import Headd from "../../../components/Head";
 
 // create a function that calculates the relative width based on the screen size to 1920x1080
 const getRelativeWidth = (width: number, screenWidth: number) => {
@@ -457,6 +458,7 @@ const GiveAwayOne: FC = ({_referrer}:any) => {
 
 	return (
 		<Layout ogUrl={`https://playcandor.com/giveaway/ipad`} ogImage="blueog.png" footer={false} navbar={false}>
+			<Headd image="https://playcandor.com/redog.png" title="Candor -"/>
 			<div className="portrait:flex portrait:flex-col-reverse landscape:grid landscape:grid-cols-12 min-h-screen w-full">
 				<div className="landscape:col-span-6 w-full h-full flex items-center justify-center">
 					<TitleComponent scr={scr}/>

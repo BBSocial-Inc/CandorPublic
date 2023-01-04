@@ -1,5 +1,6 @@
 import { Router, useRouter } from "next/router"
 import { useEffect } from "react"
+import Headd from "../../components/Head"
 
 export async function getServerSideProps(ctx:any){
 	console.log(ctx.query)
@@ -20,5 +21,7 @@ export default function Index(props:any){
             query: { _referrer: props._referrer }
         })
     }, [])
-    return null
+    return <>
+        <Headd image="https://playcandor.com/redog.png" title="Candor -"/>
+    </>
 }
