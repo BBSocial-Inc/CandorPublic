@@ -11,6 +11,7 @@ export const SEND_MESSAGE = gql`
     $countryName: String!
     $approxLocation: String!
     $answerText: String
+    $cardId: String!
   ) {
     SendMessage(
       username: $username
@@ -22,6 +23,7 @@ export const SEND_MESSAGE = gql`
       country_name: $countryName
       approx_location: $approxLocation
       answer_text: $answerText
+      card_id: $cardId
     ) {
       json
       status

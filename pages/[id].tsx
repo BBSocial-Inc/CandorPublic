@@ -17,7 +17,7 @@ export default function Home({ data }: any) {
   const [userId, setuserId] = useState<any>(false);
 
   const router = useRouter();
-  const { id } = router.query;
+  const { id, cid } = router.query;
 
   useEffect(() => {
     const api = "https://ipinfo.io/json?token=e798cd32704c2c";
@@ -41,6 +41,7 @@ export default function Home({ data }: any) {
   const graphQLClient = new GraphQLClient(endpoint);
 
   const variables = {
+    cardId: cid,
     username: id,
     question: card?.caption_text,
     temporarySenderUserId: userId,
@@ -52,7 +53,10 @@ export default function Home({ data }: any) {
     answerText: response,
   };
 
+  console.log(variables);
+
   const handleSend = async () => {
+    console.log(variables);
     const jsConfetti = new JSConfetti();
 
     setloading(true);
