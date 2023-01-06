@@ -55,7 +55,7 @@ export default function Home({ data }: any) {
     answerText: response,
   };
 
-  console.log(variables);
+  // console.log(data);
 
   const handleSend = async () => {
     console.log(variables);
@@ -83,9 +83,11 @@ export default function Home({ data }: any) {
     <>
       <Headd
         title={
-          card?.caption_text ? card?.caption_text : "Send anonymous message"
+          data?.Card?.caption_text
+            ? data?.Card?.caption_text
+            : "Send anonymous message"
         }
-        image={card?.sticker_image}
+        image={data?.Card?.sticker_image}
       />
       <main
         style={{

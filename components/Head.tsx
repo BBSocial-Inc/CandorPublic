@@ -1,7 +1,7 @@
 import Head from "next/head";
 
 export default function Headd({ title, image }: any) {
-  const dash = title == "" ? "" : " |";
+  const dash = title == "" ? "" : title + " | ";
   return (
     <Head>
       <title>{dash + "Candor - Only Truths, No Lies!"} </title>
