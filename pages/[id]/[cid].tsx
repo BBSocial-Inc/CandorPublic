@@ -12,6 +12,7 @@ export default function Home({ data }: any) {
 
   const [showModal, setShowModal] = useState(false);
   const [onFocus, setonFocus] = useState(false);
+  const [onFocus2, setonFocus2] = useState(false);
   const [response, setresponse] = useState<string | null>(null);
   const [userMeta, setuserMeta] = useState<any>(null);
   const [loading, setloading] = useState<any>(false);
@@ -54,7 +55,7 @@ export default function Home({ data }: any) {
     answerText: response,
   };
 
-  console.log(variables);
+  // console.log(data);
 
   const handleSend = async () => {
     console.log(variables);
@@ -80,7 +81,14 @@ export default function Home({ data }: any) {
 
   return (
     <>
-      <Headd/>
+      <Headd
+        title={
+          data?.Card?.caption_text
+            ? data?.Card?.caption_text
+            : "Send anonymous message"
+        }
+        image={data?.Card?.sticker_image}
+      />
       <main
         style={{
           background: card?.background_color,
@@ -99,10 +107,17 @@ export default function Home({ data }: any) {
                   setresponse(txt.target.value);
                 }}
                 placeholder="Send me an anonymous message"
-                onFocus={() => setonFocus(true)}
+                onFocus={() => {
+                  setonFocus(true);
+                  setonFocus2(false);
+                }}
                 onBlur={() => {
                   if (!response) {
                     setonFocus(false);
+                  }
+                  if (response) {
+                    setonFocus(true);
+                    setonFocus2(true);
                   }
                 }}
               />
@@ -124,7 +139,7 @@ export default function Home({ data }: any) {
           )}
         </div>
 
-        {!onFocus && (
+        {(!onFocus || onFocus2) && (
           <div className={styles.bottom}>
             <text
               style={{
@@ -203,7 +218,7 @@ export default function Home({ data }: any) {
 }
 
 export async function getServerSideProps(context: any) {
-  console.log(context)
+  console.log(context);
   const pid = context?.query?.cid;
   const query = gql`
     query Card($cardId: String!) {
@@ -215,6 +230,8 @@ export async function getServerSideProps(context: any) {
         is_activated
         text_color
         description
+        background_image
+        sticker_image
       }
     }
   `;
@@ -230,10 +247,10 @@ export async function getServerSideProps(context: any) {
   );
   const data = res;
 
-  return { 
-    props: { 
-      data: data ? data : {} ,
-      ...context?.query
-    }
+  return {
+    props: {
+      data: data ? data : {},
+      ...context?.query,
+    },
   };
 }
