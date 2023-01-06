@@ -193,6 +193,7 @@ $vw-viewport: 1920;
     justify-content: space-between;
     align-items: center;
     padding: get-vw(82px) 0;
+    padding-bottom: get-vw(100px);
   }
   .top,
   .bottom {
