@@ -12,6 +12,7 @@ export default function Home({ data }: any) {
 
   const [showModal, setShowModal] = useState(false);
   const [onFocus, setonFocus] = useState(false);
+  const [onFocus2, setonFocus2] = useState(false);
   const [response, setresponse] = useState<string | null>(null);
   const [userMeta, setuserMeta] = useState<any>(null);
   const [loading, setloading] = useState<any>(false);
@@ -99,10 +100,17 @@ export default function Home({ data }: any) {
                   setresponse(txt.target.value);
                 }}
                 placeholder="Send me an anonymous message"
-                onFocus={() => setonFocus(true)}
+                onFocus={() => {
+                  setonFocus(true);
+                  setonFocus2(false);
+                }}
                 onBlur={() => {
                   if (!response) {
                     setonFocus(false);
+                  }
+                  if (response) {
+                    setonFocus(true);
+                    setonFocus2(true);
                   }
                 }}
               />
@@ -124,7 +132,7 @@ export default function Home({ data }: any) {
           )}
         </div>
 
-        {!onFocus && (
+        {(!onFocus || onFocus2) && (
           <div className={styles.bottom}>
             <text
               style={{

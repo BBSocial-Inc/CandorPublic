@@ -18,11 +18,11 @@ export default function Headd({ title, image }: any) {
         name="og:description"
         content="Connect, engage, and chat anonymously with friends - all in one app!"
       />
-      <link rel="icon" href="/icon.png" />
+      <link rel="icon" href="/Logo.png" />
       <meta
         name="og:image"
         property="og:image"
-        content={image ? image : "/Logo.png"}
+        content={image ? image : "https://playcandor.com/Logo.png"}
       ></meta>
 
       <meta
@@ -33,19 +33,10 @@ export default function Headd({ title, image }: any) {
         content="Connect, engage, and chat anonymously with friends - all in one app!"
         name="twitter:description"
       ></meta>
-      <meta name="twitter:url" content="https://tease.africa/"></meta>
-      <meta name="twitter:card" content="summary_large_image"></meta>
-      <meta name="twitter:site" content="@TeaseAfrica"></meta>
-      <meta name="twitter:creator" content="@TeaseAfrica"></meta>
       <meta
         name="twitter:image"
         content={image ? image : "https://playcandor.com/Logo.png"}
       ></meta>
-
-      <script
-        async
-        src="https://www.googletagmanager.com/gtag/js?id=G-Y5P4TVP212"
-      ></script>
 
       <script
         dangerouslySetInnerHTML={{
