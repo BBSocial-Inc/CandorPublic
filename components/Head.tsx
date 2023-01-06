@@ -5,8 +5,14 @@ export default function Headd({ title, image }: any) {
   return (
     <Head>
       <title>{dash + "Candor - Only Truths, No Lies!"} </title>
-      <meta name="title" content={"Candor - Only Truths, No Lies!"}></meta>
-      <meta name="og:title" content={"Candor - Only Truths, No Lies!"}></meta>
+      <meta
+        name="title"
+        content={dash + "Candor - Only Truths, No Lies!"}
+      ></meta>
+      <meta
+        name="og:title"
+        content={dash + "Candor - Only Truths, No Lies!"}
+      ></meta>
 
       <meta property="og:type" content="website"></meta>
       <meta property="og:url" content="https://playcandor.com/"></meta>
@@ -27,7 +33,7 @@ export default function Headd({ title, image }: any) {
 
       <meta
         name="twitter:title"
-        content={"Candor - Only Truths, No Lies!"}
+        content={dash + "Candor - Only Truths, No Lies!"}
       ></meta>
       <meta
         content="Connect, engage, and chat anonymously with friends - all in one app!"

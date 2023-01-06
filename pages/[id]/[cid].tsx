@@ -85,7 +85,7 @@ export default function Home({ data }: any) {
         title={
           card?.caption_text ? card?.caption_text : "Send anonymous message"
         }
-        image={card?.background_image}
+        image={card?.sticker_image}
       />
       <main
         style={{
