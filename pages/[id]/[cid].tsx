@@ -81,7 +81,12 @@ export default function Home({ data }: any) {
 
   return (
     <>
-      <Headd title={card?.caption_text} image={card?.background_image} />
+      <Headd
+        title={
+          card?.caption_text ? card?.caption_text : "Send anonymous message"
+        }
+        image={card?.background_image}
+      />
       <main
         style={{
           background: card?.background_color,
