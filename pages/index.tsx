@@ -16,10 +16,13 @@ export default function Home() {
 		let left = false;
 		const timer = setInterval(()=>{
 			//check if the scroll is at the end and reverse the direction
-			if(left && cards?.scrollLeft >= cards?.scrollWidth - cards?.clientWidth){
+			let scrollLeft = cards?.scrollLeft || 0;
+			let clientWidth = cards?.clientWidth || 0;
+			let scrollWidth = cards?.scrollWidth || 0;
+			if(left && scrollLeft >= scrollWidth - clientWidth){
 				left = false;
 			}
-			else if(!left && cards?.scrollLeft <= 0){
+			else if(!left && scrollLeft <= 0){
 				left = true;
 			}
 
