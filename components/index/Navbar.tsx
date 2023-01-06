@@ -55,7 +55,7 @@ export default function Navbar(){
                                 </g>
                             </svg>
 
-                            <Link href="https://giveaway.playcandor.com"><button className="bg-black text-white font-fredoka rounded-full w-4/5 text-lg px-8 py-3">Giveaway</button></Link>
+                            <Link href="https://giveaway.playcandor.com"><button className="bg-black text-white font-fredoka rounded-full w-[300px] text-lg px-8 py-3">Giveaway</button></Link>
                         </div>
                     </>
                 )

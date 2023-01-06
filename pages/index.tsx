@@ -40,7 +40,7 @@ export default function Home() {
       <Headd/>
 	  <div className="flex flex-col min-h-screen lg:h-screen justify-between">
 		<Navbar/>
-		<div className="pl-6 md:pl-10 lg:pl-32 xl:pl-44 2xl:pl-72 flex flex-col lg:flex-row w-full h-full justify-between pb-24 pt-12">
+		<div className="pl-0 md:pl-0 lg:pl-32 xl:pl-44 2xl:pl-72 flex flex-col lg:flex-row w-full h-full justify-between pb-24 pt-12">
 			<div className="lg:h-full flex flex-col justify-end">
 				<h1 className="font-fredoka text-black text-[44px] text-center lg:text-left md:text-[60px] lg:text-[65px] xl:text-[70px] 2xl:text-[85px] 3xl:text-[95px]">Candor!</h1>
 				<span className="font-inter text-[#888888] text-[17px] text-center lg:text-left font-medium md:text-[20px] lg:text-[23px] 2xl:text-[26px] 3xl:text-[34px]">
