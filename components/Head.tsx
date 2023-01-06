@@ -1,18 +1,12 @@
 import Head from "next/head";
 
-export default function Headd({ title, image }:any) {
+export default function Headd({ title, image }: any) {
   const dash = title == "" ? "" : " |";
   return (
     <Head>
-      <title>{"Candor - Only Truths, No Lies!"} </title>
-      <meta
-        name="title"
-        content={"Candor - Only Truths, No Lies!"}
-      ></meta>
-      <meta
-        name="og:title"
-        content={"Candor - Only Truths, No Lies!"}
-      ></meta>
+      <title>{dash + "Candor - Only Truths, No Lies!"} </title>
+      <meta name="title" content={"Candor - Only Truths, No Lies!"}></meta>
+      <meta name="og:title" content={"Candor - Only Truths, No Lies!"}></meta>
 
       <meta property="og:type" content="website"></meta>
       <meta property="og:url" content="https://playcandor.com/"></meta>

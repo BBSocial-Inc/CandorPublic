@@ -80,7 +80,7 @@ export default function Home({ data }: any) {
 
   return (
     <>
-      <Headd/>
+      <Headd title={card?.caption_text} image={card?.background_image} />
       <main
         style={{
           background: card?.background_color,
@@ -203,7 +203,7 @@ export default function Home({ data }: any) {
 }
 
 export async function getServerSideProps(context: any) {
-  console.log(context)
+  console.log(context);
   const pid = context?.query?.cid;
   const query = gql`
     query Card($cardId: String!) {
@@ -215,6 +215,8 @@ export async function getServerSideProps(context: any) {
         is_activated
         text_color
         description
+        background_image
+        sticker_image
       }
     }
   `;
@@ -230,10 +232,10 @@ export async function getServerSideProps(context: any) {
   );
   const data = res;
 
-  return { 
-    props: { 
-      data: data ? data : {} ,
-      ...context?.query
-    }
+  return {
+    props: {
+      data: data ? data : {},
+      ...context?.query,
+    },
   };
 }
