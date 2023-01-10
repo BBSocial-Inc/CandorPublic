@@ -125,7 +125,9 @@ export default function Home({ data }: any) {
           </div>
           <text
             style={{
-              color: card?.background_color ? "rgba(0,0,0,0.5)" : "#856703",
+              color: card?.background_color
+                ? "rgba(225,225,225,0.8)"
+                : "#856703",
             }}
             className={styles.text3}
           >
@@ -143,7 +145,9 @@ export default function Home({ data }: any) {
           <div className={styles.bottom}>
             <text
               style={{
-                color: card?.background_color ? "rgba(0,0,0,0.5)" : "#856703",
+                color: card?.background_color
+                  ? "rgba(225,225,225,0.8)"
+                  : "#856703",
               }}
               className={styles.text4}
             >
@@ -172,7 +176,9 @@ export default function Home({ data }: any) {
               <text className={styles.emoji}>🤩</text>
               <text
                 style={{
-                  color: card?.background_color ? "rgba(0,0,0,0.5)" : "#856703",
+                  color: card?.background_color
+                    ? "rgba(225,225,225,0.8)"
+                    : "#856703",
                 }}
                 className={styles.emojitext}
               >
@@ -181,7 +187,7 @@ export default function Home({ data }: any) {
             </div>
             <div
               style={{
-                backgroundColor: "rgba(0,0,0,0.2)",
+                backgroundColor: "rgba(225,225,225,0.8)",
               }}
               className={styles.center}
             >

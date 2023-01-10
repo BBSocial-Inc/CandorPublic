@@ -8,8 +8,9 @@ $vw-viewport: 1920;
 .main {
   background-color: #ffd548;
   width: 100vw;
-  height: 100vh;
+  // height: 100vh;
   display: flex;
+  flex: 1;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
@@ -187,8 +188,9 @@ $vw-viewport: 1920;
   .main {
     background-color: #ffd548;
     width: 100vw;
-    height: 100vh;
+    // height: 100%;
     display: flex;
+    flex: 1;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
@@ -223,19 +225,19 @@ $vw-viewport: 1920;
   }
 
   .text1 {
-    font-size: get-vw(15px);
-    line-height: get-vw(15.73px);
+    font-size: get-vw(19px);
+    line-height: get-vw(19px);
     color: #000;
   }
 
   .text2 {
-    font-size: get-vw(23px);
-    line-height: get-vw(27px);
+    font-size: get-vw(28px);
+    line-height: get-vw(29px);
     color: #000;
     font-family: Anton;
   }
   .text3 {
-    font-size: get-vw(16px);
+    font-size: get-vw(19px);
     line-height: get-vw(27px);
     color: #000;
     color: #856703;
@@ -277,7 +279,7 @@ $vw-viewport: 1920;
   .input textarea {
     background-color: #000;
     border: none;
-    font-size: get-vw(18px);
+    font-size: get-vw(22px);
     width: 100%;
     height: 100%;
     vertical-align: top;
@@ -323,7 +325,7 @@ $vw-viewport: 1920;
     font-size: get-vw(108px);
   }
   .emojitext {
-    font-size: get-vw(24px);
+    font-size: get-vw(28px);
     color: #856703;
   }
   .button2 {
