@@ -8,9 +8,9 @@ $vw-viewport: 1920;
 .main {
   background-color: #ffd548;
   width: 100vw;
-  // height: 100vh;
   display: flex;
   flex: 1;
+  height: 100vh;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
@@ -188,14 +188,14 @@ $vw-viewport: 1920;
   .main {
     background-color: #ffd548;
     width: 100vw;
-    // height: 100%;
     display: flex;
     flex: 1;
+    height: 100vh;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
     padding: get-vw(82px) 0;
-    padding-bottom: get-vw(100px);
+    padding-bottom: get-vw(140px);
   }
   .top,
   .bottom {
