@@ -53,7 +53,7 @@ export default function Home() {
 			<div id="cards-container" className="flex flex-1 lg:flex-none flex-row h-full gap-16 pt-16 w-full lg:w-1/2 overflow-y-hidden overflow-x-hidden hide-scrollbar">
 				<div className="h-full min-h-[400px] p-8 relative aspect-[1/1.36] flex flex-col justify-end bg-[#1795F8] rounded-[20px]">
 					<span className="text-white stroke-black stroke-[2px] text-[174px] leading-[100%] font-fredoka">C</span>
-					<span className="font-fredoka text-3xl text-white">
+					<span className="font-fredoka text-3xl 2xl:text-4xl 3xl:text-6xl leading-[100%] text-white">
 						Only Truth, <br/>
 						No Lies!
 					</span>
@@ -73,7 +73,7 @@ export default function Home() {
 				</div>
 
 				<div className="h-full min-h-[400px] p-8 relative aspect-[1/1.36] flex flex-col justify-end bg-[#FFD548] rounded-[20px]">
-					<span className="font-anton text-3xl text-black">
+					<span className="font-anton text-3xl 2xl:text-4xl 3xl:text-6xl leading-[100%] text-black">
 						Get real with <br/>
 						your friends. <br/>
 						Chat <br/>
@@ -100,7 +100,7 @@ export default function Home() {
 				</div>
 
 				<div className="h-full min-h-[400px] p-8 relative aspect-[1/1.36] flex flex-col justify-end bg-[#FA2675] rounded-[20px]">
-					<span className="font-anton text-3xl text-white">
+					<span className="font-anton text-3xl 2xl:text-4xl 3xl:text-6xl leading-[100%] text-white">
 					Want to see<br/>
 					your question <br/>
 					in the spotlight? <br/>
@@ -128,7 +128,7 @@ export default function Home() {
 				</div>
 
 				<div className="h-full min-h-[400px] p-8 relative aspect-[1/1.36] flex flex-col justify-end bg-[#27EEF7] rounded-[20px]">
-					<span className="font-anton text-3xl text-black">
+					<span className="font-anton text-3xl 2xl:text-4xl 3xl:text-6xl leading-[100%] text-black">
 					Earn cash by <br/>
 					sharing your<br/>
 					best questions. <br/>
@@ -155,7 +155,7 @@ export default function Home() {
 				</div>
 
 				<div className="h-full min-h-[400px] p-8 relative aspect-[1/1.36] flex flex-col justify-end bg-[#FDA625] rounded-[20px]">
-					<span className="font-anton text-3xl text-white">
+					<span className="font-anton text-3xl 2xl:text-4xl 3xl:text-6xl leading-[100%] text-white">
 					Don’t hold <br/>
 					back! Create a <br/>
 					group and <br/>
@@ -184,7 +184,7 @@ export default function Home() {
 				</div>
 
 				<div className="h-full min-h-[400px] p-8 relative aspect-[1/1.36] flex flex-col justify-end bg-[#8B36F8] rounded-[20px]">
-					<span className="font-anton text-3xl text-white">
+					<span className="font-anton text-3xl 2xl:text-4xl 3xl:text-6xl leading-[100%] text-white">
 					Feeling alone? <br/>
 					Chat anonymously <br/>
 					with friends and <br/>
@@ -209,8 +209,8 @@ export default function Home() {
 
 				</div>
 
-				<div className="h-full min-h-[400px] p-8 relative aspect-[1/1.36] flex flex-col justify-end bg-[#1795F8] rounded-[20px]">
-					<span className="font-anton text-3xl text-white">
+				<div className="h-full min-h-[400px] p-8 3xl:p-12 relative aspect-[1/1.36] flex flex-col justify-end bg-[#1795F8] rounded-[20px]">
+					<span className="font-anton text-3xl 2xl:text-4xl 3xl:text-6xl leading-[100%] text-white">
 					Get your brand <br/>
 					in front of our <br/>
 					GenZ audience <br/>
