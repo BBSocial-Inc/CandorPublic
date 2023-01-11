@@ -135,7 +135,7 @@ export default function Home({ data }: any) {
           </text>
 
           {response !=="" && (
-            <div onClick={handleSend} className={styles.button}>
+            <div onClick={handleSend} style={{marginBottom:20}} className={styles.button}>
               {loading ? "Loading" : "Send"}
             </div>
           )}
