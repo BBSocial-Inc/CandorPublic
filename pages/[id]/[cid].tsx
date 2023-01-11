@@ -106,7 +106,7 @@ export default function Home({ data }: any) {
                 onChange={(txt: any) => {
                   setresponse(txt.target.value);
                 }}
-                placeholder="Send me an anonymous message"
+                placeholder="Say something anonymous"
                 onFocus={() => {
                   setonFocus(true);
                   setonFocus2(false);
