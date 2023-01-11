@@ -134,7 +134,7 @@ export default function Home({ data }: any) {
             🔒Complete anonymous. Created from Candor App
           </text>
 
-          {response !=="" && (
+          {!!response && (
             <div onClick={handleSend} style={{marginBottom:20}} className={styles.button}>
               {loading ? "Loading" : "Send"}
             </div>
