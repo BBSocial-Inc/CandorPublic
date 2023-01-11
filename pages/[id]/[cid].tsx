@@ -163,7 +163,7 @@ export default function Home({ data }: any) {
         )}
       </main>
 
-      {!showModal && (
+      {showModal && (
         <div className={styles.modalcon}>
           <div className={styles.ad}>Ad Section</div>
           <div
