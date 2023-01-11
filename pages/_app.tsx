@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import "../styles/globals.css";
+import "../styles/scrollbar.css"
 import type { AppProps } from "next/app";
 function makeid(length: any) {
   var result = "";
