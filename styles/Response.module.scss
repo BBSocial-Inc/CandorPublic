@@ -6,7 +6,7 @@ $vw-viewport: 1920;
 }
 
 .main {
-  background-color: #ffd548;
+  background-color: #1795F8;
   width: 100vw;
   display: flex;
   flex: 1;
@@ -28,6 +28,9 @@ $vw-viewport: 1920;
 .top{
   max-width: 561px;
   width: 90%;
+}
+.bottom{
+  width: 100%;
 }
 .inputcon {
   width: 100%;
