@@ -43,16 +43,6 @@ export default function Headd({ title, image }: any) {
         name="twitter:image"
         content={image ? image : "https://playcandor.com/Logo.png"}
       ></meta>
-
-      <script
-        dangerouslySetInnerHTML={{
-          __html: `    window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-        
-            gtag('config', 'G-Y5P4TVP212')`,
-        }}
-      />
     </Head>
   );
 }
