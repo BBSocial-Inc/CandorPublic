@@ -6,6 +6,7 @@ import { useRouter } from "next/router";
 import { SEND_MESSAGE } from "../../graphql/mutation";
 import JSConfetti from "js-confetti";
 import Headd from "../../components/Head";
+import { CurrentSimple } from "../../components/Current";
 
 export default function Home({ data }: any) {
   const card = data?.Card;
@@ -91,7 +92,7 @@ export default function Home({ data }: any) {
       />
       <main
         style={{
-          background: card?.background_color,
+          background: "#1795F8",
         }}
         className={styles.main}
       >
@@ -106,7 +107,7 @@ export default function Home({ data }: any) {
                 onChange={(txt: any) => {
                   setresponse(txt.target.value);
                 }}
-                placeholder="Send me an anonymous message"
+                placeholder="Say something anonymously"
                 onFocus={() => {
                   setonFocus(true);
                   setonFocus2(false);
@@ -125,34 +126,43 @@ export default function Home({ data }: any) {
           </div>
           <text
             style={{
-              color: card?.background_color
-                ? "rgba(225,225,225,0.8)"
-                : "#856703",
+              color: "#ffffff",
             }}
             className={styles.text3}
           >
             🔒Complete anonymous. Created from Candor App
           </text>
 
-          {onFocus && (
-            <div onClick={handleSend} className={styles.button}>
-              {loading ? "Loading" : "Send"}
-            </div>
+          {!!response && (
+            <>
+              <div onClick={handleSend} style={{marginTop:12}} className={styles.button}>
+                {loading ? "Loading" : "Send"}
+              </div>
+              <a
+                href="#"
+                style={{
+                  color: "#ffffff",
+                  marginBottom:20,
+                  marginTop:12,
+                  maxWidth: 300,
+                  textDecoration: 'underline'
+                }}
+                className={styles.text3}
+              >
+                Do you wish to add clues to your identity before sending?
+              </a>
+            </>
           )}
         </div>
 
         {(!onFocus || onFocus2) && (
           <div className={styles.bottom}>
-            <text
-              style={{
-                color: card?.background_color
-                  ? "rgba(225,225,225,0.8)"
-                  : "#856703",
+            <CurrentSimple 
+              textStyle={{
+                color: "#ffffff",
               }}
               className={styles.text4}
-            >
-              👇3740 people just tapped the button 👇
-            </text>
+            />
             <div
               // onClick={handleSend}
               className={styles.button}
@@ -168,7 +178,7 @@ export default function Home({ data }: any) {
           <div className={styles.ad}>Ad Section</div>
           <div
             style={{
-              background: card?.background_color,
+              background: "#1795F8",
             }}
             className={styles.modal}
           >
@@ -176,9 +186,7 @@ export default function Home({ data }: any) {
               <text className={styles.emoji}>🤩</text>
               <text
                 style={{
-                  color: card?.background_color
-                    ? "rgba(225,225,225,0.8)"
-                    : "#856703",
+                  color: "#fff"
                 }}
                 className={styles.emojitext}
               >
@@ -187,22 +195,20 @@ export default function Home({ data }: any) {
             </div>
             <div
               style={{
-                backgroundColor: "rgba(225,225,225,0.8)",
+                backgroundColor: "rgba(0,0,0,0.14)",
               }}
               className={styles.center}
             >
-              <text
-                style={{
-                  color: "#fff",
+              <CurrentSimple 
+                textStyle={{
+                  color: "#ffffff",
                 }}
-                className={styles.emojitext}
-              >
-                👇3740 people just tapped the button 👇
-              </text>
+                className={styles.text4}
+              />
               <div className={styles.button2}>Get your own messages!</div>
             </div>
             <div className={styles.center}>
-              <text
+             {/*  <text
                 style={{
                   color: "#000",
                   textDecoration: "underline",
@@ -214,7 +220,38 @@ export default function Home({ data }: any) {
                 }}
               >
                 Send another message
-              </text>
+              </text> */}
+              <button 
+                style={{
+                  width: 300,
+                  height: 60,
+                  backgroundColor: "rgba(0,0,0,0.14)",
+                  borderRadius: 100,
+                  color: "#fff",
+                  marginBottom: 21
+                }}
+                onClick={()=>{
+                  setShowModal(false)
+                }}
+              >
+                Send another message
+              </button>
+              <button 
+                style={{
+                  width: 300,
+                  height: 60,
+                  backgroundColor: "#FA2675",
+                  borderColor: "#000",
+                  borderWidth: 3,
+                  borderRadius: 100,
+                  color: "#fff",
+                }}
+                onClick={()=>{
+                  setShowModal(false)
+                }}
+              >
+                Share Candor with friends
+              </button>
             </div>
           </div>
         </div>
