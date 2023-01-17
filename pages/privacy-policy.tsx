@@ -23,9 +23,9 @@ export default function PrivacyPolicy(){
                         </Block>
 
                         <Block title="Privacy Policy Summary">
-                            At Candor, we are committed to respecting the privacy of our users. That's why we take measures to keep your data safe and only use it as you've authorized. By using our services, you agree to the collection, use, and disclosure of the information described in this policy.
+                            At Candor, we are committed to respecting the privacy of our users. That&apos;s why we take measures to keep your data safe and only use it as you&apos;ve authorized. By using our services, you agree to the collection, use, and disclosure of the information described in this policy.
                             <br/><br/>
-                            When you use Candor, we may collect several sorts of personal information, including contact information, registration and account information, demographic information, internet and network activity information, location information, and information from your device's contacts. Based on the data we gather, we may also be able to draw inferences about you. When you interact with us, we may also gather other information about you that you offer to us willingly.
+                            When you use Candor, we may collect several sorts of personal information, including contact information, registration and account information, demographic information, internet and network activity information, location information, and information from your device&apos;s contacts. Based on the data we gather, we may also be able to draw inferences about you. When you interact with us, we may also gather other information about you that you offer to us willingly.
                             <br/><br/>
                             You may expect us to put the data we gather to use in a variety of ways, including tailoring online ads to you and helping you interact with other users, answering your questions and concerns, and any other uses we reveal to you. We may share your personal information with suppliers who provide services on our behalf, social networking platforms and third parties you engage with on the Service, our business partners and marketing organizations, and as required by law.
                             <br/><br/>
@@ -35,7 +35,7 @@ export default function PrivacyPolicy(){
                         </Block>
                         <br/>
                         <Block title="Detailed Policy">
-                            This Privacy Policy describes the data privacy practices of BBSocial, Inc. (collectively, "Candor,” “we,” “us,” or “our”) with respect to the services, including our website and mobile application (collectively, the “Service”). This Privacy Policy will explain the types of personal information that we collect, the uses we make of that information, and how you can correct or request deletion of any personal identifying information you choose to give us.
+                            This Privacy Policy describes the data privacy practices of BBSocial, Inc. (collectively, “Candor,” “we,” “us,” or “our”) with respect to the services, including our website and mobile application (collectively, the “Service”). This Privacy Policy will explain the types of personal information that we collect, the uses we make of that information, and how you can correct or request deletion of any personal identifying information you choose to give us.
                             <br/><br/>
                             We collect and use personal information from and about you
                             <br/><br/>
@@ -100,7 +100,7 @@ export default function PrivacyPolicy(){
                             <br/><br/>
                             Contact Us:
                             <br/>
-                            If you have any questions or concerns about Candor's privacy policy, please contact us at <span className="text-yellow-500">privacy@candorapp.com</span>.
+                            If you have any questions or concerns about Candor&apos;s privacy policy, please contact us at <span className="text-yellow-500">privacy@candorapp.com</span>.
                             <br/><br/>
                             By using Candor, you agree to this privacy policy.
                             <br/>
@@ -108,7 +108,7 @@ export default function PrivacyPolicy(){
                             <br/><br/>
                             Detailed Privacy Policy
                             <br/><br/>
-                            BBSocial, Inc. (collectively, "Candor," "we," "us," or "our") is committed to protecting the privacy of the users of its website and mobile application (together, the "Service"), and the following Privacy Policy details how it does so. In this Privacy Statement, we will describe the information we gather about you, how that information may be used, and the procedures for revising or erasing the data you have provided to us.
+                            BBSocial, Inc. (collectively, “Candor,” “we,” “us,” or “our”) is committed to protecting the privacy of the users of its website and mobile application (together, the “Service”), and the following Privacy Policy details how it does so. In this Privacy Statement, we will describe the information we gather about you, how that information may be used, and the procedures for revising or erasing the data you have provided to us.
                             <br/><br/>
                             Some personal information about you is collected and used by us.
                             <br/><br/>
@@ -129,13 +129,13 @@ export default function PrivacyPolicy(){
                             <br/><br/>
                             We utilize the following types of personal information for the following reasons:
                             <Indent> 
-                            <br/>• &nbsp; We use your information for marketing purposes. We collect information about you so that we may tailor advertising shown on the Service to your interests and provide you content that we believe you might find valuable or interesting. Your data is used to personalize your experience and introduce you to other people. In order to find other Service users who you may already know or have a relationship to outside of the Service, we use your contact information and, if you grant us access, information from your device's contacts/phonebook to match friends and to recommend connections. In order to process your inquiries and fulfill your requests, we must collect certain information from you. When you contact us regarding the Service, our Privacy Policy or Terms of Service, or if you have any other questions or concerns, we will use the information you give to respond to your inquiry.
+                            <br/>• &nbsp; We use your information for marketing purposes. We collect information about you so that we may tailor advertising shown on the Service to your interests and provide you content that we believe you might find valuable or interesting. Your data is used to personalize your experience and introduce you to other people. In order to find other Service users who you may already know or have a relationship to outside of the Service, we use your contact information and, if you grant us access, information from your device&apos;s contacts/phonebook to match friends and to recommend connections. In order to process your inquiries and fulfill your requests, we must collect certain information from you. When you contact us regarding the Service, our Privacy Policy or Terms of Service, or if you have any other questions or concerns, we will use the information you give to respond to your inquiry.
                             Information about you is gathered from a variety of sources.
                             <br/>
                             To better serve you, we gather information about you from a wide range of both direct and indirect sources. We gather certain types of personal information from the following categories of sources:\s
                             <br/>• &nbsp; Directly from you: We collect Contact Information if you sign up for our newsletter or contact us. If you submit a request or fill out a survey, we also save the data you supply.
                             <br/>• &nbsp; From your digital tools: Information about you is automatically gathered by tracking mechanisms like cookies and web beacons (including Internet and Network Activity, and Location). This data is gathered whenever a user engages with one of our properties, including our websites, advertisements, and vendor-sent emails. In some cases, we may contract with outside parties to gather this data on our behalf.
-                            <br/>• &nbsp; From the companies we contract to undertake work for us: Service providers who help us with things like website hosting, email marketing, and other similar tasks may provide us with information such as users' contact details and data on what they do online and off it. Contact, Internet, and Network Activity, and Location Information may be sent to us by our marketing and advertising technology suppliers, and analytics service providers.
+                            <br/>• &nbsp; From the companies we contract to undertake work for us: Service providers who help us with things like website hosting, email marketing, and other similar tasks may provide us with information such as users&apos; contact details and data on what they do online and off it. Contact, Internet, and Network Activity, and Location Information may be sent to us by our marketing and advertising technology suppliers, and analytics service providers.
                             <br/><br/>
                             </Indent>
                             We do not keep your private information to ourselves.
@@ -150,10 +150,10 @@ export default function PrivacyPolicy(){
                             <br/><br/>
                             Security:
                             <br/>
-                            Confidentiality of user data and chats is a top priority for Candor. To safeguard our users' information and communications, we employ cutting-edge encryption methods. Security measures have been implemented at every level to keep hackers out of our systems.
+                            Confidentiality of user data and chats is a top priority for Candor. To safeguard our users&apos; information and communications, we employ cutting-edge encryption methods. Security measures have been implemented at every level to keep hackers out of our systems.
                             Candor will promptly notify impacted users and take all required actions in the case of a security breach.
                             <br/><br/>
-                            A user's personal data can be deleted from their Candor account at any time. After a user's account is terminated, all of their data and communications are removed from our systems.
+                            A user&apos;s personal data can be deleted from their Candor account at any time. After a user&apos;s account is terminated, all of their data and communications are removed from our systems.
                             <br/><br/>
                             Disclaimer: 
                             <br/>Candor may update this policy at any moment. In the event of any updates, users will be notified via the mobile app and the website.
