@@ -1,23 +1,66 @@
 import Head from "next/head";
 import styles from "../../styles/Response.module.scss";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { request, gql, GraphQLClient } from "graphql-request";
 import { useRouter } from "next/router";
 import { SEND_MESSAGE } from "../../graphql/mutation";
 import JSConfetti from "js-confetti";
 import Headd from "../../components/Head";
 import { CurrentSimple } from "../../components/Current";
+import { useFilePicker } from "use-file-picker";
+import { AudioRecorder, useAudioRecorder } from "react-audio-voice-recorder";
+import ReactAudioPlayer from "react-audio-player";
+
+declare global {
+  namespace JSX {
+    interface IntrinsicElements {
+      [elemName: string]: any;
+    }
+  }
+}
 
 export default function Home({ data }: any) {
   const card = data?.Card;
+
+  const player = useRef<any>();
 
   const [showModal, setShowModal] = useState(false);
   const [onFocus, setonFocus] = useState(false);
   const [onFocus2, setonFocus2] = useState(false);
   const [response, setresponse] = useState<string | null>(null);
   const [userMeta, setuserMeta] = useState<any>(null);
-  const [loading, setloading] = useState<any>(false);
+  const [loading1, setloading1] = useState<any>(false);
   const [userId, setuserId] = useState<any>(false);
+
+  const [isplaying, setisplaying] = useState<any>(false);
+  const [audio, setaudio] = useState<any>(null);
+  const recorderControls = useAudioRecorder();
+  // var audioElement: any = null;
+
+  const addAudioElement = (blob: any) => {
+    const url = URL.createObjectURL(blob);
+    console.log(url);
+    setaudio(url);
+    // let audio = document.createElement("audio");
+    // audio.src = url;
+    // audio.controls = true;
+    // document.body.appendChild(audio);
+  };
+
+  const [image, setimage] = useState<any>(null);
+  const [openFileSelector, { filesContent, loading }] = useFilePicker({
+    readAs: "DataURL",
+    accept: "image/*",
+    multiple: false,
+  });
+
+  useEffect(() => {
+    if (filesContent.length > 0) {
+      setimage(filesContent[0].content);
+    }
+    console.log(image);
+    console.log(filesContent);
+  }, [filesContent]);
 
   const router = useRouter();
   const { id, cid } = router.query;
@@ -62,19 +105,24 @@ export default function Home({ data }: any) {
     console.log(variables);
     const jsConfetti = new JSConfetti();
 
-    setloading(true);
+    setloading1(true);
     try {
       const data = await graphQLClient.request(SEND_MESSAGE, variables);
 
       if (data) {
-        jsConfetti.addConfetti();
-        setloading(false);
-        setShowModal(true);
-        setresponse(null);
+        console.log(data);
+        if (data.status) {
+          jsConfetti.addConfetti();
+          setloading1(false);
+          setShowModal(true);
+          setresponse(null);
+        } else {
+          alert("You are blocked");
+        }
       }
       // console.log(JSON.stringify(data, undefined, 2));
     } catch (error: any) {
-      setloading(false);
+      setloading1(false);
       alert(error?.message);
       // console.error(JSON.stringify(error, undefined, 2));
     }
@@ -89,6 +137,7 @@ export default function Home({ data }: any) {
             : "Send anonymous message"
         }
         image={data?.Card?.sticker_image}
+        html={``}
       />
       <main
         style={{
@@ -103,25 +152,129 @@ export default function Home({ data }: any) {
               <text className={styles.text2}>{card?.caption_text}</text>
             </div>
             <div className={styles.input}>
-              <textarea
-                onChange={(txt: any) => {
-                  setresponse(txt.target.value);
-                }}
-                placeholder="Say something anonymously"
-                onFocus={() => {
-                  setonFocus(true);
-                  setonFocus2(false);
-                }}
-                onBlur={() => {
-                  if (!response) {
-                    setonFocus(false);
-                  }
-                  if (response) {
-                    setonFocus(true);
-                    setonFocus2(true);
-                  }
-                }}
-              />
+              {false ? (
+                audio ? (
+                  <div
+                    onClick={recorderControls.startRecording}
+                    className={styles.addaudio}
+                  >
+                    <ReactAudioPlayer
+                      src={audio}
+                      // autoPlay
+                      controls
+                      style={{
+                        display: "none",
+                      }}
+                      ref={player}
+                    />
+                    <img src="/audio.svg" />
+
+                    <div className={styles.mrow}>
+                      <div
+                        onClick={() => {
+                          {
+                            isplaying
+                              ? player.current.audioEl.current.pause()
+                              : player.current.audioEl.current.play();
+
+                            setisplaying(!isplaying);
+                          }
+                        }}
+                        className={styles.mbtn}
+                      >
+                        {isplaying ? "Pause" : "Play"}
+                      </div>
+                      <div
+                        onClick={() => {
+                          setaudio(null);
+                          setisplaying(false);
+                          recorderControls.stopRecording();
+                          location.reload();
+                        }}
+                        className={styles.mbtn}
+                      >
+                        Delete
+                      </div>
+                    </div>
+                  </div>
+                ) : recorderControls.isRecording ? (
+                  <div className={styles.addaudio2}>
+                    Recording
+                    <img
+                      onClick={() => {
+                        recorderControls.stopRecording();
+                        setaudio(null);
+                      }}
+                      src="/rec.svg"
+                    />
+                  </div>
+                ) : (
+                  <div
+                    onClick={recorderControls.startRecording}
+                    className={styles.addaudio}
+                  >
+                    Add an audio
+                    <img src="/audio.svg" />
+                  </div>
+                )
+              ) : (
+                <>
+                  <textarea
+                    onChange={(txt: any) => {
+                      setresponse(txt.target.value);
+                    }}
+                    placeholder="Say something anonymously"
+                    onFocus={() => {
+                      setonFocus(true);
+                      setonFocus2(false);
+                    }}
+                    onBlur={() => {
+                      if (!response) {
+                        setonFocus(false);
+                      }
+                      if (response) {
+                        setonFocus(true);
+                        setonFocus2(true);
+                      }
+                    }}
+                    style={
+                      image
+                        ? {
+                            height: 60,
+                          }
+                        : {}
+                    }
+                  />
+
+                  {image ? (
+                    <div className={styles.imagecon}>
+                      <div className={styles.imgm}>
+                        <img src={image} className={styles.image} />
+                        <div
+                          onClick={() => {
+                            setimage(null);
+                          }}
+                          className={styles.imgdelete}
+                        >
+                          Delete
+                        </div>
+                      </div>
+                    </div>
+                  ) : (
+                    <div className={styles.addon}>
+                      <div
+                        onClick={() => {
+                          openFileSelector();
+                        }}
+                        className={styles.addbtn}
+                      >
+                        Add a picture
+                        <img src="/image.svg" />
+                      </div>
+                    </div>
+                  )}
+                </>
+              )}
             </div>
           </div>
           <text
@@ -133,19 +286,23 @@ export default function Home({ data }: any) {
             🔒Complete anonymous. Created from Candor App
           </text>
 
-          {!!response && (
+          {(response || image || audio) && (
             <>
-              <div onClick={handleSend} style={{marginTop:12}} className={styles.button}>
-                {loading ? "Loading" : "Send"}
+              <div
+                onClick={handleSend}
+                style={{ marginTop: 12 }}
+                className={styles.button}
+              >
+                {loading1 ? "Loading1" : "Send"}
               </div>
               <a
                 href="#"
                 style={{
                   color: "#ffffff",
-                  marginBottom:20,
-                  marginTop:12,
+                  marginBottom: 20,
+                  marginTop: 12,
                   maxWidth: 300,
-                  textDecoration: 'underline'
+                  textDecoration: "underline",
                 }}
                 className={styles.text3}
               >
@@ -157,7 +314,7 @@ export default function Home({ data }: any) {
 
         {(!onFocus || onFocus2) && (
           <div className={styles.bottom}>
-            <CurrentSimple 
+            <CurrentSimple
               textStyle={{
                 color: "#ffffff",
               }}
@@ -175,7 +332,19 @@ export default function Home({ data }: any) {
 
       {showModal && (
         <div className={styles.modalcon}>
-          <div className={styles.ad}>Ad Section</div>
+          <div className={styles.ad}>
+            <amp-ad
+              width="100vw"
+              height="320"
+              type="adsense"
+              data-ad-client="ca-pub-2668762950361058"
+              data-ad-slot="4618218507"
+              data-auto-format="rspv"
+              data-full-width=""
+            >
+              <div overflow=""></div>
+            </amp-ad>
+          </div>
           <div
             style={{
               background: "#1795F8",
@@ -186,7 +355,7 @@ export default function Home({ data }: any) {
               <text className={styles.emoji}>🤩</text>
               <text
                 style={{
-                  color: "#fff"
+                  color: "#fff",
                 }}
                 className={styles.emojitext}
               >
@@ -199,7 +368,7 @@ export default function Home({ data }: any) {
               }}
               className={styles.center}
             >
-              <CurrentSimple 
+              <CurrentSimple
                 textStyle={{
                   color: "#ffffff",
                 }}
@@ -208,7 +377,7 @@ export default function Home({ data }: any) {
               <div className={styles.button2}>Get your own messages!</div>
             </div>
             <div className={styles.center}>
-             {/*  <text
+              {/*  <text
                 style={{
                   color: "#000",
                   textDecoration: "underline",
@@ -221,22 +390,22 @@ export default function Home({ data }: any) {
               >
                 Send another message
               </text> */}
-              <button 
+              <button
                 style={{
                   width: 300,
                   height: 60,
                   backgroundColor: "rgba(0,0,0,0.14)",
                   borderRadius: 100,
                   color: "#fff",
-                  marginBottom: 21
+                  marginBottom: 21,
                 }}
-                onClick={()=>{
-                  setShowModal(false)
+                onClick={() => {
+                  setShowModal(false);
                 }}
               >
                 Send another message
               </button>
-              <button 
+              <button
                 style={{
                   width: 300,
                   height: 60,
@@ -246,8 +415,8 @@ export default function Home({ data }: any) {
                   borderRadius: 100,
                   color: "#fff",
                 }}
-                onClick={()=>{
-                  setShowModal(false)
+                onClick={() => {
+                  setShowModal(false);
                 }}
               >
                 Share Candor with friends
@@ -256,6 +425,17 @@ export default function Home({ data }: any) {
           </div>
         </div>
       )}
+
+      <div
+        style={{
+          display: "none",
+        }}
+      >
+        <AudioRecorder
+          onRecordingComplete={(blob) => addAudioElement(blob)}
+          recorderControls={recorderControls}
+        />
+      </div>
     </>
   );
 }
