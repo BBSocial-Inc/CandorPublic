@@ -1,7 +1,7 @@
 import Head from "next/head";
 
 export default function Headd({ title, image }: any) {
-  const dash = (title == "" || !title) ? "" : title + " | ";
+  const dash = title == "" || !title ? "" : title + " | ";
   return (
     <Head>
       <title>{dash + "Candor - Only Truths, No Lies!"} </title>
@@ -43,6 +43,12 @@ export default function Headd({ title, image }: any) {
         name="twitter:image"
         content={image ? image : "https://playcandor.com/Logo.png"}
       ></meta>
+
+      <script
+        async
+        custom-element="amp-ad"
+        src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"
+      ></script>
     </Head>
   );
 }
