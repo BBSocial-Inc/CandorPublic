@@ -4,6 +4,7 @@ import { useEffect, useState, useRef } from "react";
 import { request, gql, GraphQLClient } from "graphql-request";
 import { useRouter } from "next/router";
 import { SEND_MESSAGE } from "../../graphql/mutation";
+import { GET_S3_PRESIGNED_URL } from "../../graphql/query";
 import JSConfetti from "js-confetti";
 import Headd from "../../components/Head";
 import { CurrentSimple } from "../../components/Current";
@@ -19,10 +20,23 @@ declare global {
   }
 }
 
+function makeid(length: any) {
+  var result = "";
+  var characters =
+    "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+  var charactersLength = characters.length;
+  for (var i = 0; i < length; i++) {
+    result += characters.charAt(Math.floor(Math.random() * charactersLength));
+  }
+  return result;
+}
+
 export default function Home({ data }: any) {
   const card = data?.Card;
 
   const player = useRef<any>();
+
+  console.log(card);
 
   const [showModal, setShowModal] = useState(false);
   const [onFocus, setonFocus] = useState(false);
@@ -78,9 +92,13 @@ export default function Home({ data }: any) {
     if (userId_) {
       setuserId(userId_);
     } else {
-      setuserId("12345");
+      setuserId("132547698");
     }
   }, []);
+
+  const [isUploading, setisUploading] = useState(false);
+  const [uploadedFile, setuploadedFile] = useState("");
+  const [uploadedFile2, setuploadedFile2] = useState("");
 
   const endpoint = "https://api.candour.app/graphql";
 
@@ -97,12 +115,40 @@ export default function Home({ data }: any) {
     countryName: userMeta?.contry + " - " + userMeta?.city,
     approxLocation: userMeta?.region,
     answerText: response,
+    answerAudio: uploadedFile,
+    answerPicture: uploadedFile2,
   };
 
   // console.log(data);
 
+  const getBlob = async (fileUri: string) => {
+    try {
+      const res = await fetch(fileUri)
+        .then((r) => {
+          return r.blob();
+        })
+        .catch((e) => console.log(e, "from video blob"));
+      console.log(res);
+      return res;
+    } catch (err) {
+      console.log(err, "error from the blob");
+    }
+  };
+
   const handleSend = async () => {
-    console.log(variables);
+    if (card?.response_type === "picture") {
+      let blob = await getBlob(image);
+      await handleUpload(blob, "filereply.png");
+
+      return;
+    }
+    if (card?.response_type === "audio") {
+      let blob = await getBlob(audio);
+      await handleUpload(blob, "filereply.mp3");
+
+      return;
+    }
+    // console.log(variables);
     const jsConfetti = new JSConfetti();
 
     setloading1(true);
@@ -125,6 +171,86 @@ export default function Home({ data }: any) {
       setloading1(false);
       alert(error?.message);
       // console.error(JSON.stringify(error, undefined, 2));
+    }
+  };
+
+  const handleUpload = async (blob: any, name: any) => {
+    setloading1(true);
+    const endpoint = "https://api.candour.app/graphql";
+    const graphQLClient2 = new GraphQLClient(endpoint);
+    const variables2 = {
+      fileNames: [makeid(3) + name],
+    };
+
+    try {
+      const data = await graphQLClient2.request(
+        GET_S3_PRESIGNED_URL,
+        variables2
+      );
+
+      if (data) {
+        try {
+          let urls = data?.GetS3PreSignedUrlPublicUpload?.urls;
+          if (urls.length === 0) {
+            return;
+          }
+
+          let data0 = await fetch(urls[0]?.put, {
+            method: "PUT",
+            body: blob,
+          });
+
+          if (data0.status === 200) {
+            let filereply =
+              "https://bsocial-assets.s3-accelerate.amazonaws.com/" +
+              urls[0].key;
+
+            console.log(filereply);
+
+            if (filereply) {
+              const jsConfetti = new JSConfetti();
+
+              setloading1(true);
+              try {
+                console.log(variables);
+                const data = await graphQLClient.request(SEND_MESSAGE, {
+                  ...variables,
+                  answerAudio: card?.response_type == "audio" ? filereply : "",
+                  answerPicture:
+                    card?.response_type == "picture" ? filereply : "",
+                });
+
+                if (data) {
+                  console.log(data);
+                  if (data?.SendMessage?.status) {
+                    jsConfetti.addConfetti();
+                    setloading1(false);
+                    setShowModal(true);
+                    setresponse(null);
+                  } else {
+                    alert("You are blocked");
+                  }
+                }
+                // console.log(JSON.stringify(data, undefined, 2));
+              } catch (error: any) {
+                setloading1(false);
+                alert(error?.message);
+                // console.error(JSON.stringify(error, undefined, 2));
+              }
+            }
+          } else {
+            setisUploading(false);
+            setloading1(false);
+          }
+        } catch (e) {
+          console.log(e, "upload error..");
+          setisUploading(false);
+          setloading1(false);
+        }
+      }
+    } catch (error) {
+      console.log(error);
+      setloading1(false);
     }
   };
 
@@ -152,7 +278,7 @@ export default function Home({ data }: any) {
               <text className={styles.text2}>{card?.caption_text}</text>
             </div>
             <div className={styles.input}>
-              {false ? (
+              {card?.response_type == "audio" ? (
                 audio ? (
                   <div
                     onClick={recorderControls.startRecording}
@@ -246,33 +372,35 @@ export default function Home({ data }: any) {
                     }
                   />
 
-                  {image ? (
-                    <div className={styles.imagecon}>
-                      <div className={styles.imgm}>
-                        <img src={image} className={styles.image} />
-                        <div
-                          onClick={() => {
-                            setimage(null);
-                          }}
-                          className={styles.imgdelete}
-                        >
-                          Delete
+                  {card?.response_type == "picture" ? (
+                    image ? (
+                      <div className={styles.imagecon}>
+                        <div className={styles.imgm}>
+                          <img src={image} className={styles.image} />
+                          <div
+                            onClick={() => {
+                              setimage(null);
+                            }}
+                            className={styles.imgdelete}
+                          >
+                            Delete
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  ) : (
-                    <div className={styles.addon}>
-                      <div
-                        onClick={() => {
-                          openFileSelector();
-                        }}
-                        className={styles.addbtn}
-                      >
-                        Add a picture
-                        <img src="/image.svg" />
+                    ) : (
+                      <div className={styles.addon}>
+                        <div
+                          onClick={() => {
+                            openFileSelector();
+                          }}
+                          className={styles.addbtn}
+                        >
+                          Add a picture
+                          <img src="/image.svg" />
+                        </div>
                       </div>
-                    </div>
-                  )}
+                    )
+                  ) : null}
                 </>
               )}
             </div>
@@ -293,7 +421,7 @@ export default function Home({ data }: any) {
                 style={{ marginTop: 12 }}
                 className={styles.button}
               >
-                {loading1 ? "Loading1" : "Send"}
+                {loading1 ? "Loading" : "Send"}
               </div>
               <a
                 href="#"
@@ -342,7 +470,9 @@ export default function Home({ data }: any) {
               data-auto-format="rspv"
               data-full-width=""
             >
-              <div overflow=""></div>
+              <div
+              //  overflow=""
+              ></div>
             </amp-ad>
           </div>
           <div
@@ -455,6 +585,8 @@ export async function getServerSideProps(context: any) {
         description
         background_image
         sticker_image
+        response_type
+        category
       }
     }
   `;

@@ -12,6 +12,9 @@ export const SEND_MESSAGE = gql`
     $approxLocation: String!
     $answerText: String
     $cardId: String!
+    $answerAudio: String
+    $answerPicture: String
+    $hints: String
   ) {
     SendMessage(
       username: $username
@@ -24,6 +27,9 @@ export const SEND_MESSAGE = gql`
       approx_location: $approxLocation
       answer_text: $answerText
       card_id: $cardId
+      answer_audio: $answerAudio
+      answer_picture: $answerPicture
+      hints: $hints
     ) {
       json
       status
