@@ -4,9 +4,9 @@ export default function Footer(){
     return (
         <div className="flex flex-col relative md:flex-row items-start md:items-center justify-between gap-3 md:gap-0 py-12 w-full px-6 md:px-10 lg:px-32 xl:px-44 2xl:px-72 bg-black">
             <div className="items-start md:items-center flex flex-col md:flex-row gap-4 md:gap-12">
-                <Link href=""><span className="font-fredoka text-md lg:text-lg text-white">Privacy Policy</span></Link>
-                <Link href=""><span className="font-fredoka text-md lg:text-lg text-white">Terms of Service</span></Link>
-                <Link href=""><span className="font-fredoka text-md lg:text-lg text-white">FAQ</span></Link>
+                <Link href="/privacy-policy"><span className="font-fredoka text-md lg:text-lg text-white">Privacy Policy</span></Link>
+                <Link href="/terms-of-services"><span className="font-fredoka text-md lg:text-lg text-white">Terms of Service</span></Link>
+                <Link href="/faqs"><span className="font-fredoka text-md lg:text-lg text-white">FAQ</span></Link>
             </div>
             <div className="flex flex-row items-center gap-2">
                 <span className="text-white font-fredoka text-3xl lg:text-4xl">&copy;</span> 
