@@ -283,7 +283,7 @@ export default function Home({ data }: any) {
             }}
             className={styles.text3}
           >
-            🔒Complete anonymous. Created from Candor App
+            🔒Completely anonymous. Created from Candor App
           </text>
 
           {(response || image || audio) && (
