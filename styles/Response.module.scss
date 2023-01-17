@@ -215,6 +215,7 @@ $vw-viewport: 1920;
   position: absolute;
   bottom: get-vw(-30px);
   left: 0;
+  // margin-bottom: get-vw(30px);
 }
 .mbtn {
   width: fit-content;
@@ -353,6 +354,143 @@ $vw-viewport: 1920;
     align-items: center;
     flex-direction: column;
   }
+  .addaudio {
+    width: 100%;
+    background-color: #353535;
+    height: 100%;
+    font-family: "Fredoka One";
+    font-style: normal;
+    font-weight: 600;
+    font-size: get-vw(22px);
+    line-height: get-vw(27px);
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: get-vw(20px);
+    cursor: pointer;
+    position: relative;
+  }
+  .addaudio img {
+    width: get-vw(27px);
+    height: get-vw(36px);
+    margin-left: get-vw(10px);
+  }
+  .addon {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    height: get-vw(55px);
+  }
+  .addbtn {
+    width: get-vw(190px);
+    height: get-vw(54px);
+    background: #313131;
+    border-radius: get-vw(32px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Fredoka One";
+    font-style: normal;
+    font-weight: 600;
+    font-size: get-vw(16px);
+    color: #ffffff;
+    cursor: pointer;
+  }
+  .addbtn img {
+    width: get-vw(22px);
+    height: get-vw(22px);
+    margin-left: get-vw(10px);
+  }
+  .imagecon {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: get-vw(30px);
+  }
+  .imgm {
+    position: relative;
+  }
+  .image {
+    width: get-vw(276px);
+    height: get-vw(250px);
+    border-radius: get-vw(16px);
+    background-color: #313131;
+  }
+  .imgdelete {
+    width: fit-content;
+    height: get-vw(54px);
+    background: #313131;
+    border-radius: get-vw(52px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Fredoka One";
+    font-style: normal;
+    font-weight: 600;
+    font-size: get-vw(16px);
+    color: #ffffff;
+    cursor: pointer;
+    padding: 0 get-vw(40px);
+    border: get-vw(7px) black solid;
+    position: absolute;
+    bottom: get-vw(-20px);
+    right: get-vw(-45px);
+  }
+  .addaudio2 {
+    width: 100%;
+    background-color: #353535;
+    height: get-vw(115px);
+    font-family: "Fredoka One";
+    font-style: normal;
+    font-weight: 600;
+    font-size: get-vw(22px);
+    line-height: get-vw(27px);
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border-radius: get-vw(20px);
+  }
+  .addaudio2 img {
+    width: get-vw(25px);
+    height: get-vw(25px);
+    cursor: pointer;
+    position: absolute;
+    bottom: get-vw(15px);
+    right: get-vw(20px);
+  }
+  .mrow {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // background-color: red;
+    position: absolute;
+    bottom: get-vw(-30px);
+    left: 0;
+  }
+  .mbtn {
+    width: fit-content;
+    height: get-vw(54px);
+    background: #313131;
+    border-radius: get-vw(52px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Fredoka One";
+    font-style: normal;
+    font-weight: 600;
+    font-size: get-vw(16px);
+    color: #ffffff;
+    cursor: pointer;
+    padding: 0 get-vw(40px);
+    border: get-vw(7px) black solid;
+    margin: 0 get-vw(2px);
+  }
+
   /* .inputcon {
     width: get-vw(561px);
     border-radius: get-vw(20px);
