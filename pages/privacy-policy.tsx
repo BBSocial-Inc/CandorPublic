@@ -1,9 +1,7 @@
 import Headd from "../components/Head";
 import Footer from "../components/index/Footer";
 import Navbar from "../components/index/Navbar";
-import { Block } from "../components/Text";
-
-const Indent = ({ children }: any) => <div className="ml-8">{children}</div>;
+import { Block, Indent } from "../components/Text";
 
 export default function PrivacyPolicy() {
   return (
@@ -55,7 +53,7 @@ export default function PrivacyPolicy() {
                     <br/><br/>
                     All user data and communications are encrypted using the latest in security technology since we value the privacy of our users. If there is a security breach, we will immediately begin working to contain the situation and notify all impacted users.
                     <br/><br/>
-                    You can remove your Candor account at any time and all personal information and interactions related with that account will be completely wiped from our systems. We may alter this privacy policy from time to time and will notify users of any changes. Please email us at <span className="text-black">privacy@candorapp.com</span> if you have any questions or issues regarding our privacy policies.
+                    You can remove your Candor account at any time and all personal information and interactions related with that account will be completely wiped from our systems. We may alter this privacy policy from time to time and will notify users of any changes. Please email us at <span className="text-black">privacy.candor@candorapp.com</span> if you have any questions or issues regarding our privacy policies.
                 </Block>
                 <br/>
                 <Block title="Detailed Policy">
@@ -124,7 +122,7 @@ export default function PrivacyPolicy() {
                     <br/><br/>
                     Contact Us:
                     <br/>
-                    If you have any questions or concerns about Candor&apos;s privacy policy, please contact us at <span className="text-black">privacy@candorapp.com</span>.
+                    If you have any questions or concerns about Candor&apos;s privacy policy, please contact us at <span className="text-black">privacy.candor@candorapp.com</span>.
                     <br/><br/>
                     By using Candor, you agree to this privacy policy.
                     <br/>
