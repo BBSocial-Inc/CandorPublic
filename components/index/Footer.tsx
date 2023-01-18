@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function Footer(){
     return (
-        <div className="flex flex-col relative md:flex-row items-start md:items-center justify-between gap-3 md:gap-0 py-12 w-full px-6 md:px-10 lg:px-32 xl:px-44 2xl:px-72 bg-black">
+        <div className="flex flex-col relative md:flex-row items-start md:items-center overflow-hidden justify-between gap-3 md:gap-0 py-12 w-full px-6 md:px-10 lg:px-32 xl:px-44 2xl:px-72 bg-black">
             <div className="items-start md:items-center flex flex-col md:flex-row gap-4 md:gap-12">
                 <Link href="/privacy-policy"><span className="font-fredoka text-md lg:text-lg text-white">Privacy Policy</span></Link>
                 <Link href="/terms-of-services"><span className="font-fredoka text-md lg:text-lg text-white">Terms of Service</span></Link>

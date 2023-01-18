@@ -7,9 +7,9 @@ const Indent = ({ children }: any) => <div className="ml-8">{children}</div>;
 
 export default function PrivacyPolicy() {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen overflow-hidden">
       <Headd />
-      <div className="flex flex-col min-h-screen justify-between lg:h-screen">
+      <div className="flex flex-col min-h-screen overflow-y-scroll justify-between lg:h-screen">
         <div>
           <Navbar />
           <div className="px-6 md:px-10 lg:px-32 xl:px-44 2xl:px-72 pb-12">
@@ -124,74 +124,17 @@ export default function PrivacyPolicy() {
                     <br/><br/>
                     Contact Us:
                     <br/>
-                    If you have any questions or concerns about Candor&apos;s privacy policy, please contact us at <span className="text-yellow-500">privacy@candorapp.com</span>.
+                    If you have any questions or concerns about Candor&apos;s privacy policy, please contact us at <span className="text-black">privacy@candorapp.com</span>.
                     <br/><br/>
                     By using Candor, you agree to this privacy policy.
                     <br/>
                     Please note that this privacy policy is in effect as of the date above, and that we may change it from time to time. If we make any material changes to this policy, we will provide notice through the Service or by other means as required by applicable law.
-                    <br/><br/>
-                    Detailed Privacy Policy
-                    <br/><br/>
-                    BBSocial, Inc. (collectively, “Candor,” “we,” “us,” or “our”) is committed to protecting the privacy of the users of its website and mobile application (together, the “Service”), and the following Privacy Policy details how it does so. In this Privacy Statement, we will describe the information we gather about you, how that information may be used, and the procedures for revising or erasing the data you have provided to us.
-                    <br/><br/>
-                    Some personal information about you is collected and used by us.
-                    <br/><br/>
-                    For various business purposes, Candor (and the contractors we employ to perform business operations on our behalf) may collect, receive, and create the following types of personal information:
-                    <Indent>
-                    <br/>• &nbsp; Contact Information: We may ask for your name, email address, physical address, social network information, and phone number 
-                    <br/>• &nbsp; Registration and Account Information: Display name, reminder questions and answers, and preferred methods of contact are some of the kind of information that may be collected throughout the registration and account setup processes. 
-                    <br/>• &nbsp; Demographic Information: Some of the data we gather about you may fall within the category of “demographic information,” which includes things like your gender.
-                    <br/>• &nbsp; Internet and Network Activity Information: Information regarding your use of the Service, including how often you use the Service, how often you interact with certain features, and which parts of the Service are most frequently viewed, as well as information about your usage of the Internet and other networks. Your browser type, IP address, and unique device identifiers are all pieces of data that might be collected.
-                    <br/>• &nbsp; Location Information: We get data about your location using your IP address and related information, such as your zip code or postcode.
-                    <br/>• &nbsp; Information from your device’s contacts: If you allow us to access your phonebook or contacts on your device, we will gather information about your contacts, such as their names and phone numbers.
-                    <br/>• &nbsp; Inferences: We may make conclusions about you based on your other personal information, such as your preferences, traits, predispositions, attitudes, and interests.
-                    <br/>• &nbsp; For account verification, account management, customer support, system maintenance, and other Service-related information, we may send push notifications to your mobile device if they are enabled, or text messages with your approval.
-                    <br/>• &nbsp; Additional Identifiable Information That Individuals May Choose to Share: Your posts, images, and other contributions to our Service, including our mobile application, which is designed to promote the creation of publicly available information and content, are among the types of data we collect. Keep in mind that any information or content you submit through our mobile app might potentially be made public depending on your settings, so please use caution.
-                    </Indent>
-                    <br/><br/>
-                    How we utilize your personal data is outlined in this policy.
-                    <br/><br/>
-                    We utilize the following types of personal information for the following reasons:
-                    <Indent> 
-                    <br/>• &nbsp; We use your information for marketing purposes. We collect information about you so that we may tailor advertising shown on the Service to your interests and provide you content that we believe you might find valuable or interesting. Your data is used to personalize your experience and introduce you to other people. In order to find other Service users who you may already know or have a relationship to outside of the Service, we use your contact information and, if you grant us access, information from your device&apos;s contacts/phonebook to match friends and to recommend connections. In order to process your inquiries and fulfill your requests, we must collect certain information from you. When you contact us regarding the Service, our Privacy Policy or Terms of Service, or if you have any other questions or concerns, we will use the information you give to respond to your inquiry.
-                    Information about you is gathered from a variety of sources.
                     <br/>
-                    To better serve you, we gather information about you from a wide range of both direct and indirect sources. We gather certain types of personal information from the following categories of sources:\s
-                    <br/>• &nbsp; Directly from you: We collect Contact Information if you sign up for our newsletter or contact us. If you submit a request or fill out a survey, we also save the data you supply.
-                    <br/>• &nbsp; From your digital tools: Information about you is automatically gathered by tracking mechanisms like cookies and web beacons (including Internet and Network Activity, and Location). This data is gathered whenever a user engages with one of our properties, including our websites, advertisements, and vendor-sent emails. In some cases, we may contract with outside parties to gather this data on our behalf.
-                    <br/>• &nbsp; From the companies we contract to undertake work for us: Service providers who help us with things like website hosting, email marketing, and other similar tasks may provide us with information such as users&apos; contact details and data on what they do online and off it. Contact, Internet, and Network Activity, and Location Information may be sent to us by our marketing and advertising technology suppliers, and analytics service providers.
-                    <br/><br/>
-                    </Indent>
-                    We do not keep your private information to ourselves.
-                    <br/><br/>
-                    Under the following conditions, we may disclose each category of personal information to third parties: 
-                    <Indent>
-                    <br/>• &nbsp; With vendors who perform services on our behalf: We may disclose each category of personal information to third parties who help us send emails, manage and operate our sites, fulfill purchases, provide advertising or marketing services, provide analytics and search engine support, track advertising impressions, investigate and prevent data incidents, audit our business and financial st For your dealings on the Service with third parties and social media sites: You may be able to like and share content from the Service using third-party plug-ins included in the Service. Sometimes, the Services will even let you log in with credentials from another service. These third-party platforms acquire information about you when you use them in conjunction with our Service.
-                    <br/>• &nbsp; We may share your Contact Information, Inferences, and Location Data with our distributors and dealers, as well as with our business partners and marketing businesses. All of the foregoing information may be shared with third parties who assist us in our marketing efforts. These third parties may include social media platforms, advertising networks, and ad tech providers.
-                    <br/>• &nbsp; We may disclose any or all categories of personal information in response to a court order or subpoena if we believe that doing so is necessary to comply with the law or to protect ourselves, our customers, or others. If requested by a law enforcement or judicial entity, we may also provide this information. Included in this is providing your data to the United States government. In order to fulfill our agreements with you and to protect the rights of others, we may share information about you with third parties. If we suspect fraud, we may share your information with the appropriate authorities.
-                    <br/>• &nbsp; When we find a buyer for all or part of our company: Some or all of your personal information may be transferred to a new owner, operator, or other business associate in the event of a sale of all or a portion of our business. In the event of a comparable restructuring of our company, we may also be required to disclose your personal data. Additionally, we may disclose your details to other parties in the course of due diligence on any corporate changes we make. Also, we may tell you the following other things: For additional purposes that we will explain to you, we may share your personal information with other parties.
-                    </Indent>
-                    <br/><br/>
-                    Security:
-                    <br/>
-                    Confidentiality of user data and chats is a top priority for Candor. To safeguard our users&apos; information and communications, we employ cutting-edge encryption methods. Security measures have been implemented at every level to keep hackers out of our systems.
-                    Candor will promptly notify impacted users and take all required actions in the case of a security breach.
-                    <br/><br/>
-                    A user&apos;s personal data can be deleted from their Candor account at any time. After a user&apos;s account is terminated, all of their data and communications are removed from our systems.
-                    <br/><br/>
-                    Disclaimer: 
-                    <br/>Candor may update this policy at any moment. In the event of any updates, users will be notified via the mobile app and the website.
-                    <br/><br/>
-                    The Best Way to Get in Touch with Us is to
-                    Please email us at <span className="text-black">privacy@candorapp.com</span> with any questions or comments you may have concerning the privacy practices of Candor.
-                    <br/><br/>
-                    Your use of Candor indicates your acceptance of this policy.
-                    This privacy policy is effective as of the date set out above, and we reserve the right to make changes to it at any time. Notice of any substantial changes to this policy will be made via the Service or such other channels as may be required by applicable law.
                 </Block>
             </div>
         </div>
         <Footer/>
-    </div>
+      </div>
     </div>
   );
 }
