@@ -12,7 +12,7 @@ export default function TermsOfServices(){
                 <Navbar/>
                 <div className="px-6 md:px-10 lg:px-32 xl:px-44 2xl:px-72 pb-12">
                     
-                    <svg className="w-[60%] md:w-1/2 lg:w-[35%] mx-auto my-8 lg:my-16" xmlns="http://www.w3.org/2000/svg" width="816" height="240" viewBox="0 0 816 240">
+                    <svg className="w-[60%] md:w-1/2 lg:w-[35%] mx-auto my-8 lg:my-16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 816 240">
                     <text id="Terms_of_Services" data-name="Terms of Services" transform="translate(0 218)" font-size="95" font-family="FredokaOne-Regular, Fredoka One"><tspan x="0" y="0">Terms of Services</tspan></text>
                     <text id="_" data-name="🔒" transform="translate(353 103)" font-size="95" font-family="SegoeUIEmoji, Segoe UI Emoji"><tspan x="0" y="0">🔒</tspan></text>
                     </svg>
