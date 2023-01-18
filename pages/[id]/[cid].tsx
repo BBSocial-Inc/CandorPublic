@@ -40,7 +40,7 @@ export default function Home({ data }: any) {
   console.log(card);
 
   const [showModal, setShowModal] = useState(false);
-  const [addClues, setAddClues] = useState(true);
+  const [addClues, setAddClues] = useState(false);
   const [onFocus, setonFocus] = useState(false);
   const [onFocus2, setonFocus2] = useState(false);
   const [response, setresponse] = useState<string | null>(null);
