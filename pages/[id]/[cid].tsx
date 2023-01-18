@@ -11,6 +11,7 @@ import { CurrentSimple } from "../../components/Current";
 import { useFilePicker } from "use-file-picker";
 import { AudioRecorder, useAudioRecorder } from "react-audio-voice-recorder";
 import ReactAudioPlayer from "react-audio-player";
+import Clues from "../../components/Clues";
 
 declare global {
   namespace JSX {
@@ -39,6 +40,7 @@ export default function Home({ data }: any) {
   console.log(card);
 
   const [showModal, setShowModal] = useState(false);
+  const [addClues, setAddClues] = useState(true);
   const [onFocus, setonFocus] = useState(false);
   const [onFocus2, setonFocus2] = useState(false);
   const [response, setresponse] = useState<string | null>(null);
@@ -423,8 +425,7 @@ export default function Home({ data }: any) {
               >
                 {loading1 ? "Loading" : "Send"}
               </div>
-              <a
-                href="#"
+              <button
                 style={{
                   color: "#ffffff",
                   marginBottom: 20,
@@ -433,9 +434,10 @@ export default function Home({ data }: any) {
                   textDecoration: "underline",
                 }}
                 className={styles.text3}
+                onClick={() => setAddClues(true)}
               >
                 Do you wish to add clues to your identity before sending?
-              </a>
+              </button>
             </>
           )}
         </div>
@@ -457,6 +459,8 @@ export default function Home({ data }: any) {
           </div>
         )}
       </main>
+
+      {addClues && <Clues handleClose={()=>setAddClues(false)}/>}
 
       {showModal && (
         <div className={styles.modalcon}>
