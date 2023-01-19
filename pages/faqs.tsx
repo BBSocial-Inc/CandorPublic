@@ -40,7 +40,7 @@ export default function FAQs(){
                         <br/><br/>
                         Q: How do I report suspicious activity or behavior on Candor?
                         <br/>
-                        A: If you come across any suspicious activity or behavior, please report it to our team immediately. You can report any issues by using the "Report" feature or by contacting our support team.
+                        A: If you come across any suspicious activity or behavior, please report it to our team immediately. You can report any issues by using the &quot;Report&quot; feature or by contacting our support team.
                         <br/><br/>
                         Q: Is Candor free to use?
                         <br/>
@@ -100,7 +100,7 @@ export default function FAQs(){
                         <br/><br/>
                         Q: How can I access Candor on the web?
                         <br/>
-                        A: Candor will soon be available as a web app, and you will be able to access it by going to the Candor website. Additionally, you'll be able to access it as a chrome extension.
+                        A: Candor will soon be available as a web app, and you will be able to access it by going to the Candor website. Additionally, you&apos;ll be able to access it as a chrome extension.
                         <br/><br/>
                         Q: Can I use Candor on my computer?
                         <br/>
@@ -120,7 +120,7 @@ export default function FAQs(){
                         <br/><br/>
                         QQ: How will I know if my question is approved to be added to the app?
                         <br/>
-                        A: Our team will review your question and if it meets our guidelines, it will be entered into a poll for users of the app to vote on. The top voted questions will be added to the app. Submitters of the top voted questions will be informed through email by the team. Note that when your question appears on the weekly poll, you will receive a link with which you can invite your friends to vote up the question that you entered. All submitted questions are entered into the app with the submitter's name for bragging right purposes.
+                        A: Our team will review your question and if it meets our guidelines, it will be entered into a poll for users of the app to vote on. The top voted questions will be added to the app. Submitters of the top voted questions will be informed through email by the team. Note that when your question appears on the weekly poll, you will receive a link with which you can invite your friends to vote up the question that you entered. All submitted questions are entered into the app with the submitter&apos;s name for bragging right purposes.
                         <br/><br/>
                         Q: How can I vote on submitted questions in the app?
                         <br/>
@@ -132,7 +132,7 @@ export default function FAQs(){
                         <br/><br/>
                         Q: Will my name be associated with the question I submitted?
                         <br/>
-                        A: Yes, all submitted questions will be entered into the app with the submitter's name for bragging right purposes.
+                        A: Yes, all submitted questions will be entered into the app with the submitter&apos;s name for bragging right purposes.
                         <br/><br/>
                         Q: How often are polls held for submitted questions?
                         <br/>
