@@ -15,7 +15,7 @@ export default function Navbar(){
                 </svg>
             </Link>
             <div className="lg:hidden inline-flex items-center">
-                <button className="bg-black  text-white font-fredoka rounded-full text-sm px-8 py-3">Giveaway</button>
+                <Link href="https://giveaway.playcandor.com/1"><button className="bg-black  text-white font-fredoka rounded-full text-sm px-8 py-3">Giveaway</button></Link>
                 <button className="ml-4" onClick={()=>setOpen(true)}>
                     <svg xmlns="http://www.w3.org/2000/svg" width="26.075" height="22.178" viewBox="0 0 26.075 22.178">
                         <g id="Group_3655" data-name="Group 3655" transform="translate(-332.925 -77.411)">
@@ -28,9 +28,9 @@ export default function Navbar(){
             </div>
             <div className="hidden lg:flex flex-row items-center gap-8">
                 <ul className="flex flex-row items-center gap-12">
-                    <li className="text-fredoka text-lg text-[#888888]">Brands</li>
-                    <Link href="/parents"><li className="text-fredoka text-lg text-[#888888]">Parents</li></Link>
-                    <Link href="/resource"><li className="text-fredoka text-lg text-[#888888]">Resource</li></Link>
+                    <li className="text-fredoka hidden text-lg text-[#888888]">Brands</li>
+                    <li className="text-fredoka hidden text-lg text-[#888888]">Parents</li>
+                    <Link href="/privacy-policy"><li className="text-fredoka text-lg text-[#888888]">Safety</li></Link>
                     <a href="mailto:contact.candor@gmail.com"><li className="text-fredoka text-lg text-[#888888]">Contact</li></a>
                 </ul>
                 <Link href="https://giveaway.playcandor.com/1"><button className="bg-black text-white font-fredoka rounded-full text-lg px-8 py-3">Giveaway</button></Link>
@@ -42,9 +42,9 @@ export default function Navbar(){
                         <div className="flex lg:hidden flex-col justify-center gap-6 py-4 absolute z-50 top-0 left-0 right-0 bottom-0 bg-black opacity-50"/>
                         <div className="flex lg:hidden flex-col items-center justify-center gap-6 pt-10 pb-5 absolute z-50 bg-white top-0 left-0 right-0">
                             <ul className="flex flex-col items-center gap-3">
-                                <li className="text-fredoka text-lg text-black">Brands</li>
-                                <Link href="/parents"><li className="text-fredoka text-lg text-black">Parents</li></Link>
-                                <Link href="/resource"><li className="text-fredoka text-lg text-black">Resource</li></Link>
+                                <li className="text-fredoka hidden text-lg text-black">Brands</li>
+                                <li className="text-fredoka hidden text-lg text-black">Parents</li>
+                                <Link href="/privacy-policy"><li className="text-fredoka text-lg text-black">Safety</li></Link>
                                 <a href="mailto:contact.candor@gmail.com"><li className="text-fredoka text-lg text-black">Contact</li></a>
                             </ul>
                             <svg onClick={()=>setOpen(false)} xmlns="http://www.w3.org/2000/svg" className="absolute right-9 top-9" width="31.07" height="31.07" viewBox="0 0 31.07 31.07">

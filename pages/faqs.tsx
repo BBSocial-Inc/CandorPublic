@@ -118,7 +118,7 @@ export default function FAQs(){
                         <br/>
                         A: No, there is no limit to the number of questions you can submit on Candor.
                         <br/><br/>
-                        QQ: How will I know if my question is approved to be added to the app?
+                        Q: How will I know if my question is approved to be added to the app?
                         <br/>
                         A: Our team will review your question and if it meets our guidelines, it will be entered into a poll for users of the app to vote on. The top voted questions will be added to the app. Submitters of the top voted questions will be informed through email by the team. Note that when your question appears on the weekly poll, you will receive a link with which you can invite your friends to vote up the question that you entered. All submitted questions are entered into the app with the submitter&apos;s name for bragging right purposes.
                         <br/><br/>
