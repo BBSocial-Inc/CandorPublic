@@ -30,7 +30,7 @@ export default function Navbar(){
                 <ul className="flex flex-row items-center gap-12">
                     <li className="text-fredoka hidden text-lg text-[#888888]">Brands</li>
                     <li className="text-fredoka hidden text-lg text-[#888888]">Parents</li>
-                    <Link href="/privacy-policy"><li className="text-fredoka text-lg text-[#888888]">Safety</li></Link>
+                    <Link href="/safety"><li className="text-fredoka text-lg text-[#888888]">Safety</li></Link>
                     <a href="mailto:contact.candor@gmail.com"><li className="text-fredoka text-lg text-[#888888]">Contact</li></a>
                 </ul>
                 <Link href="https://giveaway.playcandor.com/1"><button className="bg-black text-white font-fredoka rounded-full text-lg px-8 py-3">Giveaway</button></Link>
@@ -44,7 +44,7 @@ export default function Navbar(){
                             <ul className="flex flex-col items-center gap-3">
                                 <li className="text-fredoka hidden text-lg text-black">Brands</li>
                                 <li className="text-fredoka hidden text-lg text-black">Parents</li>
-                                <Link href="/privacy-policy"><li className="text-fredoka text-lg text-black">Safety</li></Link>
+                                <Link href="/safety"><li className="text-fredoka text-lg text-black">Safety</li></Link>
                                 <a href="mailto:contact.candor@gmail.com"><li className="text-fredoka text-lg text-black">Contact</li></a>
                             </ul>
                             <svg onClick={()=>setOpen(false)} xmlns="http://www.w3.org/2000/svg" className="absolute right-9 top-9" width="31.07" height="31.07" viewBox="0 0 31.07 31.07">
