@@ -167,7 +167,7 @@ export default function Home({ data }: any) {
           setShowModal(true);
           setresponse(null);
         } else {
-          alert("You are blocked");
+          alert(data?.message);
         }
       }
       // console.log(JSON.stringify(data, undefined, 2));
@@ -462,7 +462,7 @@ export default function Home({ data }: any) {
         )}
       </main>
 
-      {addClues && <Clues handleClose={()=>setAddClues(false)}/>}
+      {addClues && <Clues handleClose={() => setAddClues(false)} />}
 
       {showModal && (
         <div className={styles.modalcon}>
