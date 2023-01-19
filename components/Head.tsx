@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Script from "next/script";
 
 export default function Headd({ title, image }: any) {
   const dash = title == "" || !title ? "" : title + " | ";
@@ -44,11 +45,11 @@ export default function Headd({ title, image }: any) {
         content={image ? image : "https://playcandor.com/Logo.png"}
       ></meta>
 
-      <script
+      <Script
         async
         custom-element="amp-ad"
         src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"
-      ></script>
+      ></Script>
     </Head>
   );
 }

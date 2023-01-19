@@ -94,7 +94,9 @@ export default function Home({ data }: any) {
     if (userId_) {
       setuserId(userId_);
     } else {
-      setuserId("132547698");
+      let uid = makeid(6);
+      localStorage.setItem("user_special_id", uid);
+      setuserId(uid);
     }
   }, []);
 
