@@ -6,3 +6,4 @@ export function Block({children, title}:any){
         </div>
     )
 }
+export const Indent = ({ children }: any) => <div className="ml-8">{children}</div>;
