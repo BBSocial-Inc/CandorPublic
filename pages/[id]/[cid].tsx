@@ -161,13 +161,13 @@ export default function Home({ data }: any) {
 
       if (data) {
         console.log(data);
-        if (data.status) {
+        if (data?.SendMessage?.status) {
           jsConfetti.addConfetti();
           setloading1(false);
           setShowModal(true);
           setresponse(null);
         } else {
-          alert(data?.message);
+          alert(data?.SendMessage?.message);
         }
       }
       // console.log(JSON.stringify(data, undefined, 2));
@@ -232,7 +232,7 @@ export default function Home({ data }: any) {
                     setShowModal(true);
                     setresponse(null);
                   } else {
-                    alert("You are blocked");
+                    alert(data?.SendMessage?.message);
                   }
                 }
                 // console.log(JSON.stringify(data, undefined, 2));
