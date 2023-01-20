@@ -209,7 +209,7 @@ export default function Home() {
 
 				</div>
 
-				<div className="h-full min-h-[450px] p-8 3xl:p-12 relative aspect-[1/1.36] flex flex-col justify-end bg-[#1795F8] rounded-[20px]">
+				<div className="h-full min-h-[450px] p-5 3xl:p-12 relative aspect-[1/1.36] flex flex-col justify-end bg-[#1795F8] rounded-[20px]">
 					<span className="font-anton text-3xl 2xl:text-4xl 3xl:text-6xl leading-[100%] text-white">
 					Get your brand <br/>
 					in front of our <br/>
