@@ -148,7 +148,7 @@ export default function Home({ data }: any) {
     }
     if (card?.response_type === "audio") {
       let blob = await getBlob(audio);
-      await handleUpload(blob, "filereply.mp3");
+      await handleUpload(blob, "filereply.wav");
 
       return;
     }
