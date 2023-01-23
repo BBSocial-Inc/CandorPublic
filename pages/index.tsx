@@ -32,7 +32,7 @@ export default function Home() {
 			else{
 				cards?.scrollBy({left:-1})
 			}
-		},10)
+		},5)
 		return ()=>clearInterval(timer)
 	},[])
   return (
@@ -310,7 +310,7 @@ export default function Home() {
 				</div>
 
 				<div className="h-full min-h-[450px] p-0 aspect-[329.036/406.056]">
-					<svg xmlns="http://www.w3.org/2000/svg" className="h-full w-full" viewBox="0 0 32 9.036 406.056">
+					<svg xmlns="http://www.w3.org/2000/svg" className="h-full w-full" viewBox="0 0 329.036 406.056">
 						<defs>
 							<filter id="Rectangle_2881" x="0" y="0" width="310.535" height="406.056" filterUnits="userSpaceOnUse">
 							{/* <feOffset input="SourceAlpha"/> */}
@@ -322,7 +322,7 @@ export default function Home() {
 						</defs>
 						<g id="Group_1" data-name="Group 1" transform="translate(24 3.487)">
 							<g transform="matrix(1, 0, 0, 1, -24, -3.49)" filter="url(#Rectangle_2881)">
-							<rect id="Rectangle_2881-2" data-name="Rectangle 2881" width="262.535" height="383.056" rx="22" transform="translate(24 24)" fill="#fa2675"/>
+							<rect id="Rectangle_2881-2" data-name="Rectangle 2881" width="262.535" height="353.056" rx="22" transform="translate(24 24)" fill="#fa2675"/>
 							</g>
 							<g id="Group_4145" data-name="Group 4145" transform="matrix(0.966, 0.259, -0.259, 0.966, 121.93, 0)">
 							<g id="Rectangle_2880" data-name="Rectangle 2880" transform="matrix(0.998, -0.07, 0.07, 0.998, 0, 18.949)" stroke="#000" stroke-width="1">

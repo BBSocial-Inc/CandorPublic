@@ -434,6 +434,7 @@ export default function Home({ data }: any) {
                   marginTop: 12,
                   maxWidth: 300,
                   textDecoration: "underline",
+                  display: "none"
                 }}
                 className={styles.text3}
                 onClick={() => setAddClues(true)}

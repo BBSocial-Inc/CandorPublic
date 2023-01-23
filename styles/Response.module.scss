@@ -101,7 +101,7 @@ $vw-viewport: 1920;
 .addaudio {
   width: 100%;
   background-color: #353535;
-  height: get-vw(115px);
+  height: 100%; //get-vw(115px)
   font-family: "Fredoka One";
   font-style: normal;
   font-weight: 600;
@@ -185,7 +185,7 @@ $vw-viewport: 1920;
 .addaudio2 {
   width: 100%;
   background-color: #353535;
-  height: get-vw(115px);
+  height: 100%;//get-vw(115px);
   font-family: "Fredoka One";
   font-style: normal;
   font-weight: 600;
