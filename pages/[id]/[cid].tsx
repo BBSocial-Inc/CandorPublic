@@ -571,7 +571,6 @@ export default function Home({ data }: any) {
         <AudioRecorder
           onRecordingComplete={(blob) => addAudioElement(blob)}
           recorderControls={recorderControls}
-          audioType="audio/wav"
         />
       </div>
     </>
