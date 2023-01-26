@@ -53,7 +53,7 @@ const TitleComponent:FC = ()=>{
 					</svg>
 				):  */
 				index==1 && (
-					<svg xmlns="http://www.w3.org/2000/svg" className="landscape:hidden w-[75%] mx-auto h-auto md:w-[550px]" viewBox="0 0 221 125.284">
+					<svg xmlns="http://www.w3.org/2000/svg" className="landscape:hidden w-[75%] mx-auto h-auto md:w-[550px]" viewBox="0 0 280 125.284">
 						<g id="Group_4128" data-name="Group 4128" transform="translate(-77.5 -126.666)">
 							<text id="_IS_COMING" data-name=" IS COMING" transform="translate(87.5 235.95)" font-size="49" font-family="Anton-Regular, Anton"><tspan x="0" y="0" xmlSpace="preserve"> IS COMING</tspan></text>
 							<g id="Group_4126" data-name="Group 4126" transform="translate(-274 -119.473)">
@@ -84,7 +84,7 @@ const TitleComponent:FC = ()=>{
 					</svg>
 				):  */
 				index==1 && (
-					<svg xmlns="http://www.w3.org/2000/svg" className="portrait:hidden w-[25vw]" viewBox="0 0 517 167">
+					<svg xmlns="http://www.w3.org/2000/svg" className="portrait:hidden w-[25vw]" viewBox="0 0 590 167">
 						<g id="Group_4127" data-name="Group 4127" transform="translate(-351.5 -235)">
 							<text id="_IS_COMING" data-name=" IS 
 						COMING" transform="translate(660.5 313)" fill="#171717" font-size="66" font-family="Anton-Regular, Anton"><tspan x="0" y="0" xmlSpace="preserve"> IS </tspan><tspan x="0" y="67" xmlSpace="preserve"> COMING</tspan></text>
