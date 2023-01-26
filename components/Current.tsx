@@ -1,30 +1,5 @@
 import { FC, useEffect, useState } from "react";
 
-export function CurrentSimple({textStyle, className}:any){
-	const [count, setCount] = useState<number>(80);
-    const [loading, setLoading] = useState(true)
-	useEffect(()=>{
-        let c = parseInt(localStorage.getItem('countSimple') || "80")
-		
-		const timer = setInterval(()=>{
-			setCount(co=> {
-                let newCount = Math.max(co, c) + Math.floor(Math.random()*3)
-                localStorage.setItem('countSimple', newCount.toString())
-                return newCount
-            })
-            if(loading)setLoading(false)
-
-		}, Math.random()*7000+10000)
-		return ()=> clearInterval(timer)
-	},[])
-	return (
-		<span style={{...textStyle}} className={className || ""}>{loading? "Loading..." : `👇 ${count} people just tapped the button 👇`}
-            
-        </span>
-	)
-}
-
-
 export default function Current({textStyle}:any){
 	const [count, setCount] = useState<number>(500);
     const [loading, setLoading] = useState(true)

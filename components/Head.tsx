@@ -1,10 +1,8 @@
 import Head from "next/head";
-import Script from "next/script";
 
 export default function Headd({ title, image }: any) {
-  const dash = title == "" || !title ? "" : title + " | ";
+  const dash = (title == "" || !title) ? "" : title + " | ";
   return (
-    <>
     <Head>
       <title>{dash + "Candor - Only Truths, No Lies!"} </title>
       <meta
@@ -46,13 +44,15 @@ export default function Headd({ title, image }: any) {
         content={image ? image : "https://playcandor.com/Logo.png"}
       ></meta>
 
-      
+      <script
+        dangerouslySetInnerHTML={{
+          __html: `    window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+        
+            gtag('config', 'G-Y5P4TVP212')`,
+        }}
+      />
     </Head>
-    <Script
-    async
-    custom-element="amp-ad"
-    src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"
-    ></Script>
-    </>
   );
 }
