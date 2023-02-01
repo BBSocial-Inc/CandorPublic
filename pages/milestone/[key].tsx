@@ -8,17 +8,17 @@ import copy from 'copy-to-clipboard';
 const MilestoneAchievement = ({total}: any)=>{
 	//total = 74
 	const getCurrentVerticalProgress = (value:number)=>{
-		if(value<=3){
-			return 206.557 * value/3;
+		if(value<=5){
+			return 206.557 * value/5;
 		}
-		else if(value>3 && value <= 10){
-			return 206.557 + (425-206.557) * (value-3)/7; // 7 = 10-3 from 3 to 10
+		else if(value>5 && value <= 25){
+			return 206.557 + (420-206.557) * (value-5)/20; // 20 = 25-5 from 5 to 25
 		}
-		else if(value>10 && value <= 50){
-			return 425 + (650-425) * (value-10)/40; // 40 = 50-10 from 10 to 50
+		else if(value>25 && value <= 50){
+			return 420 + (655-420) * (value-25)/25; // 25 = 50-25 from 25 to 50
 		}
-		else if(value>50 && value <= 100){
-			return 650 + (886.91-650) * (value-50)/50; // 50 = 100-50 from 50 to 100
+		else if (value>50 && value <= 100){
+			return 655 + (886.91-655) * (value-50)/50; // 50 = 100-50 from 50 to 100
 		}
 		else if (value>100){
 			return 886.91;
@@ -29,20 +29,20 @@ const MilestoneAchievement = ({total}: any)=>{
 	}
 
 	const getCurrentHorizontalProgress = (value:number)=>{
-		if(value<=3){
-			return 221.211 * value/3;
+		if(value<=5){
+			return 174 * value/5;
 		}
-		else if(value>3 && value <= 10){
-			return 221.211 + (408-221.211) * (value-3)/7; // 7 = 10-3 from 3 to 10
+		else if(value>5 && value <= 25){
+			return 174 + (325-174) * (value-5)/20; // 20 = 25-5 from 5 to 25
 		}
-		else if(value>10 && value <= 50){
-			return 408 + (608-408) * (value-10)/40; // 40 = 50-10 from 10 to 50
+		else if(value>25 && value <= 50){
+			return 325 + (480-325) * (value-25)/25; // 25 = 50-25 from 25 to 50
 		}
-		else if(value>50 && value <= 100){
-			return 608 + (833.64-608) * (value-50)/50; // 50 = 100-50 from 50 to 100
+		else if (value>50 && value <= 100){
+			return 480 + (665-480) * (value-50)/50; // 50 = 100-50 from 50 to 100
 		}
 		else if (value>100){
-			return 833.64;
+			return 665;
 		}
 		else{
 			return 0;
@@ -50,80 +50,81 @@ const MilestoneAchievement = ({total}: any)=>{
 	}
 	return (
 		<div className="w-full flex flex-col items-center">
-			<svg className="portrait:hidden" xmlns="http://www.w3.org/2000/svg"  width="100%" viewBox="0 0 885.272 104">
-				<g id="Group_4124" data-name="Group 4124" transform="translate(-215.728 -808)">
-					<path id="Path_14600" data-name="Path 14600" d="M-3856.974-12633.727h833.64" transform="translate(4076.202 13476.44)" fill="none" stroke="#d3d3d3" stroke-linecap="round" stroke-width="7"/>
-					<path id="Path_14601" data-name="Path 14601" d={`M-3856.974-12633.727h${getCurrentHorizontalProgress(total)}`} transform="translate(4076.202 13476.44)" fill="none" stroke="#8d8d8d" stroke-linecap="round" stroke-width="7"/>
-					<circle id="Ellipse_1342" data-name="Ellipse 1342" cx="11.5" cy="11.5" r="11.5" transform="translate(617 808)" fill="#8d8d8d"/>
-					<circle id="Ellipse_1347" data-name="Ellipse 1347" cx="11.5" cy="11.5" r="11.5" transform="translate(429 808)" fill="#8d8d8d"/>
-					<circle id="Ellipse_1343" data-name="Ellipse 1343" cx="11.5" cy="11.5" r="11.5" transform="translate(815 808)" fill="#8d8d8d"/>
-					<circle id="Ellipse_1344" data-name="Ellipse 1344" cx="11.5" cy="11.5" r="11.5" transform="translate(1039 808)" fill="#8d8d8d"/>
-					<text id="_10" data-name="10" transform="translate(624 823)" fill="#fff" font-size="10" font-family="Anton-Regular, Anton"><tspan x="0" y="0">10</tspan></text>
-					<text id="_3" data-name="3" transform="translate(438 823)" fill="#fff" font-size="10" font-family="Anton-Regular, Anton"><tspan x="0" y="0">3</tspan></text>
-					<text id="Share_with_a_friend" data-name="Share with a friend" transform="translate(218 823)" font-size="10" font-family="Anton-Regular, Anton"><tspan x="0" y="0">Share with a friend</tspan></text>
-					<text id="Exclusive_access_to_all_Champagne_products" data-name="Exclusive access to all 
-				Champagne products" transform="translate(218 870)" font-size="10" font-family="Anton-Regular, Anton"><tspan x="0" y="0">Exclusive access to all </tspan><tspan x="0" y="13">Champagne products</tspan></text>
-					<text id="_1_month_premium_free_value_10_._Full_access_of_all_premium_feature_1_hour_promo_of_your_account" data-name="1 month premium free 
+			<svg className="portrait:hidden" xmlns="http://www.w3.org/2000/svg"  width="100%" viewBox="0 0 705.523 81">
+				<g id="Group_4169" data-name="Group 4169" transform="translate(-215.477 -808)">
+					<path id="Path_14600" data-name="Path 14600" d="M-3856.974-12633.727h662.462" transform="translate(4075.95 13469.313)" fill="none" stroke="#d3d3d3" stroke-linecap="round" stroke-width="7"/>
+					<path id="Path_14601" data-name="Path 14601" d={`M-3856.974-12633.727h${getCurrentHorizontalProgress(total)}`} transform="translate(4075.95 13469.313)" fill="none" stroke="#8d8d8d" stroke-linecap="round" stroke-width="7"/>
+					<circle id="Ellipse_1342" data-name="Ellipse 1342" cx="9" cy="9" r="9" transform="translate(535 808)" fill="#8d8d8d"/>
+					<circle id="Ellipse_1347" data-name="Ellipse 1347" cx="9" cy="9" r="9" transform="translate(386 808)" fill="#8d8d8d"/>
+					<ellipse id="Ellipse_1343" data-name="Ellipse 1343" cx="9.5" cy="9" rx="9.5" ry="9" transform="translate(692 808)" fill="#8d8d8d"/>
+					<circle id="Ellipse_1344" data-name="Ellipse 1344" cx="9" cy="9" r="9" transform="translate(870 808)" fill="#8d8d8d"/>
+					<text id="_25" data-name="25" transform="translate(540 819)" fill="#fff" font-size="8" font-family="Anton-Regular, Anton"><tspan x="0" y="0">25</tspan></text>
+					<text id="_5" data-name="5" transform="translate(393 819)" fill="#fff" font-size="8" font-family="Anton-Regular, Anton"><tspan x="0" y="0">5</tspan></text>
+					<text id="Share_with_a_friend" data-name="Share with a friend" transform="translate(218 819)" font-size="8" font-family="Anton-Regular, Anton"><tspan x="0" y="0">Share with a friend</tspan></text>
+					<text id="Exclusive_access_to_all_Candor_Pro_features" data-name="Exclusive access to all 
+				Candor Pro features" transform="translate(218 856)" font-size="8" font-family="Anton-Regular, Anton"><tspan x="0" y="0">Exclusive access to all </tspan><tspan x="0" y="10">Candor Pro features</tspan></text>
+					<text id="_1_month_premium_free_value_10_._Full_access_to_all_the_Candor_Pro_features" data-name="1 month premium free 
 				(value $10). Full access to all 
-				premium features + 1 hour 
-				promo of your account" transform="translate(579 870)" font-size="10" font-family="Anton-Regular, Anton"><tspan x="0" y="0">1 month premium free </tspan><tspan x="0" y="13">(value $10). Full access to all </tspan><tspan x="0" y="26">premium features + 1 hour </tspan><tspan x="0" y="39">promo of your account</tspan></text>
-					<text id="_15_day_premium_for_free_value_5_._Full_access_of_all_premium_feature_" data-name="15 days premium for free 
+				the Candor Pro features" transform="translate(505 856)" font-size="8" font-family="Anton-Regular, Anton"><tspan x="0" y="0">1 month premium free </tspan><tspan x="0" y="10">(value $10). Full access to all </tspan><tspan x="0" y="20">the Candor Pro features</tspan></text>
+					<text id="_15_days_premium_for_free_value_5_._Full_access_to_all_the_Candor_pro_features_" data-name="15 days premium for free 
 				(value $5). Full access to 
-				all premium features " transform="translate(390 870)" font-size="10" font-family="Anton-Regular, Anton"><tspan x="0" y="0">15 days premium for free </tspan><tspan x="0" y="13">(value $5). Full access to </tspan><tspan x="0" y="26">all premium features </tspan></text>
-					<text id="_3_month_premium_free_value_30_._Full_access_of_all_premium_feature_5_hour_promo_of_your_account" data-name="3 months premium free 
+				all the Candor pro 
+				features " transform="translate(354 856)" font-size="8" font-family="Anton-Regular, Anton"><tspan x="0" y="0">15 days premium for free </tspan><tspan x="0" y="10">(value $5). Full access to </tspan><tspan x="0" y="20">all the Candor pro </tspan><tspan x="0" y="30">features </tspan></text>
+					<text id="_3_months_premium_free_value_30_._Full_access_to_all_the_Candor_Pro_features" data-name="3 months premium free 
 				(value $30). Full access to all 
-				premium features + 5 hour 
-				promo of your account" transform="translate(780 870)" font-size="10" font-family="Anton-Regular, Anton"><tspan x="0" y="0">3 months premium free </tspan><tspan x="0" y="13">(value $30). Full access to all </tspan><tspan x="0" y="26">premium features + 5 hour </tspan><tspan x="0" y="39">promo of your account</tspan></text>
-					<text id="_5_month_premium_free_value_50_._Full_access_of_all_premium_feature_10_hour_promo_of_your_account" data-name="5 months premium free 
+				the Candor Pro features" transform="translate(665 856)" font-size="8" font-family="Anton-Regular, Anton"><tspan x="0" y="0">3 months premium free </tspan><tspan x="0" y="10">(value $30). Full access to all </tspan><tspan x="0" y="20">the Candor Pro features</tspan></text>
+					<text id="_5_months_premium_free_value_50_._Full_access_to_all_the_Candor_Pro_features_" data-name="5 months premium free 
 				(value $50). Full access to all 
-				premium features + 10 hour 
-				promo of your account" transform="translate(982 870)" font-size="10" font-family="Anton-Regular, Anton"><tspan x="0" y="0">5 months premium free </tspan><tspan x="0" y="13">(value $50). Full access to all </tspan><tspan x="0" y="26">premium features + 10 hour </tspan><tspan x="0" y="39">promo of your account</tspan></text>
-					<text id="_50" data-name="50" transform="translate(821 823)" fill="#fff" font-size="10" font-family="Anton-Regular, Anton"><tspan x="0" y="0">50</tspan></text>
-					<text id="_100" data-name="100" transform="translate(1043 823)" fill="#fff" font-size="10" font-family="Anton-Regular, Anton"><tspan x="0" y="0">100</tspan></text>
+				the Candor Pro features " transform="translate(825 856)" font-size="8" font-family="Anton-Regular, Anton"><tspan x="0" y="0">5 months premium free </tspan><tspan x="0" y="10">(value $50). Full access to all </tspan><tspan x="0" y="20">the Candor Pro features </tspan></text>
+					<text id="_50" data-name="50" transform="translate(697 819)" fill="#fff" font-size="8" font-family="Anton-Regular, Anton"><tspan x="0" y="0">50</tspan></text>
+					<text id="_100" data-name="100" transform="translate(874 819)" fill="#fff" font-size="8" font-family="Anton-Regular, Anton"><tspan x="0" y="0">100</tspan></text>
 				</g>
 			</svg>
-			<svg className="landscape:hidden flex self-center" xmlns="http://www.w3.org/2000/svg" width="60%" viewBox="0 0 280.74 1229">
-				<g id="Group_4120" data-name="Group 4120" transform="translate(-39 -648)">
+
+			<svg className="landscape:hidden flex self-center" xmlns="http://www.w3.org/2000/svg" width="70%" viewBox="0 0 381.74 1203">
+				<g id="Group_4171" data-name="Group 4171" transform="translate(-39 -728)">
+					<g id="Group_4120" data-name="Group 4120" transform="translate(0 80)">
 					<path id="Path_14602" data-name="Path 14602" d="M-3856.974-12633.728v886.91" transform="translate(3901.233 13475.318)" fill="none" stroke="#d3d3d3" stroke-linecap="round" stroke-width="7"/>
 					<path id="Path_14601" data-name="Path 14601" d={`M-3856.974-12633.726v${getCurrentVerticalProgress(total)}`} transform="translate(3901.233 13475.316)" fill="none" stroke="#8d8d8d" stroke-linecap="round" stroke-width="7"/>
 					<circle id="Ellipse_1342" data-name="Ellipse 1342" cx="21.5" cy="21.5" r="21.5" transform="translate(81.74 1027)" fill="#8d8d8d"/>
-					<text id="_3" data-name="3" transform="translate(98.74 1056.5)" fill="#fff" font-size="19" font-family="Anton-Regular, Anton"><tspan x="0" y="0">3</tspan></text>
+					<text id="_5" data-name="5" transform="translate(98.74 1056.5)" fill="#fff" font-size="19" font-family="Anton-Regular, Anton"><tspan x="0" y="0">5</tspan></text>
 					<text id="Share_with_a_friend" data-name="Share with a friend" transform="translate(81.74 849)" font-size="19" font-family="Anton-Regular, Anton"><tspan x="0" y="0">Share with a friend</tspan></text>
 					<text id="Exclusive_access_to_all_Champagne_products" data-name="Exclusive access to all 
 				Champagne products" transform="translate(81.74 930)" font-size="19" font-family="Anton-Regular, Anton"><tspan x="0" y="0">Exclusive access to all </tspan><tspan x="0" y="25">Champagne products</tspan></text>
-					{length>0 && (
+					{total>=5 && (
 						<>
-							<path id="Path_14603" data-name="Path 14603" d={`M-13507.148-1986.5h21.492`} transform="translate(13551.408 2828.091)" fill="none" stroke="#8d8d8d" stroke-linecap="round" stroke-width="7"/>
-							<path id="Path_14604" data-name="Path 14604" d={`M-13507.148-1986.5h21.492`} transform="translate(13551.408 2909.485)" fill="none" stroke="#8d8d8d" stroke-linecap="round" stroke-width="7"/>
-							<path id="Path_14605" data-name="Path 14605" d={`M-13507.148-1986.5h21.492`} transform="translate(13551.408 3034.649)" fill="none" stroke="#8d8d8d" stroke-linecap="round" stroke-width="7"/>
+							<path id="Path_14603" data-name="Path 14603" d="M-13507.148-1986.5h21.492" transform="translate(13551.408 2828.091)" fill="none" stroke="#8d8d8d" stroke-linecap="round" stroke-width="7"/>
+							<path id="Path_14604" data-name="Path 14604" d="M-13507.148-1986.5h21.492" transform="translate(13551.408 2909.485)" fill="none" stroke="#8d8d8d" stroke-linecap="round" stroke-width="7"/>
+							<path id="Path_14605" data-name="Path 14605" d="M-13507.148-1986.5h21.492" transform="translate(13551.408 3034.649)" fill="none" stroke="#8d8d8d" stroke-linecap="round" stroke-width="7"/>
 						</>
 					)}
 					<circle id="Ellipse_1346" data-name="Ellipse 1346" cx="21.5" cy="21.5" r="21.5" transform="translate(81.74 1471)" fill="#8d8d8d"/>
 					<circle id="Ellipse_1351" data-name="Ellipse 1351" cx="21.5" cy="21.5" r="21.5" transform="translate(81.74 1707)" fill="#8d8d8d"/>
 					<text id="_50" data-name="50" transform="translate(93.74 1500.5)" fill="#fff" font-size="19" font-family="Anton-Regular, Anton"><tspan x="0" y="0">50</tspan></text>
 					<text id="_100" data-name="100" transform="translate(90.74 1736.5)" fill="#fff" font-size="19" font-family="Anton-Regular, Anton"><tspan x="0" y="0">100</tspan></text>
-					<text id="_1_month_premium_free_value_10_._Full_access_of_all_premium_feature_1_hour_promo_of_your_account" data-name="1 month premium free 
+					<text id="_1_month_premium_free_value_10_._Full_access_to_all_the_Candor_Pro_features" data-name="1 month premium free 
 				(value $10). Full access to all 
-				premium features + 1 hour 
-				promo of your account" transform="translate(81.74 1320)" font-size="20" font-family="Anton-Regular, Anton"><tspan x="0" y="0">1 month premium free </tspan><tspan x="0" y="26">(value $10). Full access to all </tspan><tspan x="0" y="52">premium features + 1 hour </tspan><tspan x="0" y="78">promo of your account</tspan></text>
-					<text id="_3_month_premium_free_value_30_._Full_access_of_all_premium_feature_5_hour_promo_of_your_account" data-name="3 months premium free 
+				the Candor Pro features" transform="translate(81.74 1320)" font-size="20" font-family="Anton-Regular, Anton"><tspan x="0" y="0">1 month premium free </tspan><tspan x="0" y="26">(value $10). Full access to all </tspan><tspan x="0" y="52">the Candor Pro features</tspan></text>
+					<text id="_3_months_premium_free_value_30_._Full_access_to_all_the_Candor_Pro_features" data-name="3 months premium free 
 				(value $30). Full access to all 
-				premium features + 5 hour 
-				promo of your account" transform="translate(81.74 1556)" font-size="20" font-family="Anton-Regular, Anton"><tspan x="0" y="0">3 months premium free </tspan><tspan x="0" y="26">(value $30). Full access to all </tspan><tspan x="0" y="52">premium features + 5 hour </tspan><tspan x="0" y="78">promo of your account</tspan></text>
-					<text id="_5_month_premium_free_value_50_._Full_access_of_all_premium_feature_10_hour_promo_of_your_account" data-name="5 months premium free 
+				the Candor Pro features" transform="translate(81.74 1556)" font-size="20" font-family="Anton-Regular, Anton"><tspan x="0" y="0">3 months premium free </tspan><tspan x="0" y="26">(value $30). Full access to all </tspan><tspan x="0" y="52">the Candor Pro features</tspan></text>
+					<text id="_5_months_premium_free_value_50_._Full_access_to_all_the_Candor_Pro_features_" data-name="5 months premium free 
 				(value $50). Full access to all 
-				premium features + 10 hour 
-				promo of your account" transform="translate(81.74 1792)" font-size="20" font-family="Anton-Regular, Anton"><tspan x="0" y="0">5 months premium free </tspan><tspan x="0" y="26">(value $50). Full access to all </tspan><tspan x="0" y="52">premium features + 10 hour </tspan><tspan x="0" y="78">promo of your account</tspan></text>
+				the Candor Pro features " transform="translate(81.74 1792)" font-size="20" font-family="Anton-Regular, Anton"><tspan x="0" y="0">5 months premium free </tspan><tspan x="0" y="26">(value $50). Full access to all </tspan><tspan x="0" y="52">the Candor Pro features </tspan></text>
 					<circle id="Ellipse_1345" data-name="Ellipse 1345" cx="21.5" cy="21.5" r="21.5" transform="translate(81.74 1236)" fill="#8d8d8d"/>
-					<text id="_10" data-name="10" transform="translate(95.24 1265.5)" fill="#fff" font-size="19" font-family="Anton-Regular, Anton"><tspan x="0" y="0">10</tspan></text>
-					<text id="_15_day_premium_for_free_value_5_._Full_access_of_all_premium_feature_" data-name="15 days premium for free 
-				(value $5). Full access to 
-				all premium features " transform="translate(81.74 1111)" font-size="20" font-family="Anton-Regular, Anton"><tspan x="0" y="0">15 days premium for free </tspan><tspan x="0" y="26">(value $5). Full access to </tspan><tspan x="0" y="52">all premium features </tspan></text>
+					<text id="_25" data-name="25" transform="translate(93.74 1265.5)" fill="#fff" font-size="19" font-family="Anton-Regular, Anton"><tspan x="0" y="0">25</tspan></text>
+					<text id="_15_day_premium_for_free_value_5_._Full_access_of_all_premium_feature_" data-name="15 day premium for free 
+				(value $5). Full access of 
+				all premium feature " transform="translate(81.74 1111)" font-size="20" font-family="Anton-Regular, Anton"><tspan x="0" y="0">15 day premium for free </tspan><tspan x="0" y="26">(value $5). Full access of </tspan><tspan x="0" y="52">all premium feature </tspan></text>
+					</g>
+					<text id="YOUR_CANDOR_MILESTONE" data-name="YOUR CANDOR 
+				MILESTONE" transform="translate(39 786)" font-size="49" font-family="Anton-Regular, Anton"><tspan x="0" y="0">YOUR CANDOR </tspan><tspan x="0" y="49">MILESTONE</tspan></text>
+					<text id="YOUR_CURRENT_REFERRALS:_2" data-name="YOUR CURRENT REFERRALS:  2" transform="translate(147 883)" fill="#171717" font-size="20" font-family="Anton-Regular, Anton"><tspan x="-107.6" y="0" xmlSpace="preserve">YOUR CURRENT REFERRALS:  {total}</tspan></text>
 				</g>
-				<text id="YOUR_BENEFIT_MILESTONE" data-name="YOUR BENEFIT 
-				MILESTONE" transform="translate(0 58)" font-size="49" font-family="Anton-Regular, Anton"><tspan x="0" y="0">YOUR BENEFIT </tspan><tspan x="0" y="49">MILESTONE</tspan></text>
-				<text id="YOUR_CURRENT_REFERRALS:_2" data-name="YOUR CURRENT REFERRALS:  2" transform="translate(108 155)" fill="#171717" font-size="20" font-family="Anton-Regular, Anton"><tspan x="-107.6" y="0" xmlSpace="preserve">YOUR CURRENT REFERRALS:  {total}</tspan></text>
-				</svg>
+			</svg>
+
+			
+
 
 		</div>
 	)
