@@ -185,19 +185,19 @@ const Milestone: FC = ({id}:any) => {
 			<div className="flex flex-row mt-[30px] lg:mt-[6.35vh] justify-center flex-1">
 				<Image
 					alt="Champagne app screens"
-					src="/images/content/activate-phone.png"
-					width="854"
-					height="767"
-					className="hidden w-[42%] lg:inline mr-4"
+					src="/images/content/phone-view2.png"
+					width="584"
+					height="737"
+					className="hidden w-[30%] lg:inline mr-7"
 				/>
 				<div className="mt-[40px] flex flex-col items-center">
 					<p className="font-inter font-bold text-[13px] lg:text-[1.3vw] pt-0 block">DON’T LEAVE YOUR FRIENDS BEHIND</p>
-					<p className="font-anton text-[49px] leading-[49px] lg:text-[4vw] lg:leading-[4vw] xl:text-[3.5vw] xl:leading-[3.5vw] pt-0 block text-center my-3">INVITE FRIENDS & <br/>EARN EXCLUSIVE BENEFITS</p>
+					<p className="font-anton text-[49px] leading-[49px] lg:text-[4vw] lg:leading-[4vw] xl:text-[3.5vw] xl:leading-[3.5vw] pt-0 block text-center my-3"> EXCLUSIVE ACCESS<br/>TO ALL CANDOR PRODUCTS</p>
 					<span className="font-inter text-center text-center text-[15px] lg:text-[1.3vw] lg:leading-[1.5vw] xl:text-[1.2vw] xl:leading-[1.35vw] text-[#888888]">
-						Share your unique link with your friends via <br/>
-						email or socials & enjoy Champagne special <br/>
-						goodies. You earn exclusive benefits for<br/> 
-						each friend who signs up!  
+					Share your unique link with your friends via <br/>
+					email or socials & enjoy Candor special goodies. <br/>
+					You earn exclusive benefits for each friend <br/>
+					who signs up! 
 					</span>
 					<div className="w-[345px] h-[65px] lg:min-w-[550px] lg:h-[77px] flex flex-row items-center border-[3px] border-black mt-5 mb-[26px] rounded-full">
 						<h1 className="outline-none text-[#aaaaaa] w-full truncate bg-transparent px-[31px] font-inter font-medium text-[15px] lg:text-[18px]">{"champagneapp.com/"+data?.fields?.Key}</h1>	
@@ -221,15 +221,15 @@ const Milestone: FC = ({id}:any) => {
 			</h1> */}
 			<Image
 				alt="Champagne app screens"
-				src="/images/content/activate-phone.png"
-				width="854"
-				height="767"
+				src="/images/content/phone-view2.png"
+				width="584"
+				height="737"
 				ref={imgBottomRef as any}
-				className="landscape:hidden m-auto mb-[20px] mt-[40px] w-[80%]"
+				className="landscape:hidden m-auto mb-[20px] mt-[40px] w-[70%]"
 			/>
-			<div style={{marginTop:-(imgBottomRef.current?.offsetHeight||0)*0.75}} className={`py-6 flex-1 landscape:max-h-[37.40vh] portrait:pb-24 bg-white w-full portrait:relative landscape:absolute landscape:bottom-0 landscape:left-0 landscape:right-0 flex flex-col z-1000 lg:px-36 bg-[#FAFAFA]`}>
+			<div style={{marginTop:-(imgBottomRef.current?.offsetHeight||0)*0.65}} className={`py-6 flex-1 landscape:max-h-[37.40vh] portrait:pb-24 bg-white w-full portrait:relative landscape:absolute landscape:bottom-0 landscape:left-0 landscape:right-0 flex flex-col z-1000 lg:px-36 bg-[#FAFAFA]`}>
 				<div className="flex portrait:hidden flex-row justify-between mb-6">
-					<span className="font-anton lg:inline portrait:text-[20px] landscape:text-[2vw] text-center lg:text-left text-[#171717]">YOUR BENEFIT MILESTONE</span>
+					<span className="font-anton lg:inline portrait:text-[20px] landscape:text-[2vw] text-center lg:text-left text-[#171717]">YOUR CANDOR MILESTONE</span>
 					<span className="font-anton lg:inline portrait:text-[20px] landscape:text-[2vw] text-center lg:text-left text-[#171717]">YOUR CURRENT REFERRALS: {data?.fields?.Referrals || 0}</span>
 				</div>
 				<MilestoneAchievement total={data?.fields?.Referrals || 0}/>

@@ -242,25 +242,25 @@ const IsComing: FC = ({_referrer}:any) => {
 		<Layout footer={false} navbar={false}>
 			<div className="px-6">
 				<div className="flex flex-row pt-[50px] lg:pt-[9.35vh] justify-center flex-1">
-					<div className="lg:mt-[13.89vh]">
+					<div className="lg:mt-[13.89vh] mr-8">
 						<TitleComponent/>
 					</div>
 					<Image
 						alt="Champagne app screens"
-						src="/images/content/activate-phone.png"
+						src="/images/content/phone-view.png"
 						width="854"
 						height="767"
-						className="portrait:hidden w-[39%]"
+						className="portrait:hidden w-[34%]"
 					/>
 				</div>
-				<TextInputPortrait onSubmit={onSubmit}/>
+				<TextInputPortrait loading={loading} onSubmit={onSubmit}/>
 				<div className="landscape:bg-[#FAFAFA] w-full lg1:mt-[-17.6vh] h-[37.41vh] landscape:absolute landscape:bottom-0 landscape:left-0 landscape:right-0 flex flex-col landscape:justify-center items-center z-1000">
-					<TextInputLarge onSubmit={onSubmit}/>
+					<TextInputLarge loading={loading} onSubmit={onSubmit}/>
 					<Current />
 
 					<Image
 						alt="Champagne app screens"
-						src="/images/content/activate-phone.png"
+						src="/images/content/phone-view.png"
 						width={345}
 						height={120}
 						className="landscape:hidden mt-[40px] w-[80%]"
